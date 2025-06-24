@@ -11,7 +11,7 @@ com_topbar_setup = {
 				country_rank >= rank_value:great_power
 			}
 
-			# Prestige Icon
+			# Prestige Item
 			create_struct = {
 				struct_type = 0
 				struct_scope = topbar_com_prestige
@@ -27,7 +27,7 @@ com_topbar_setup = {
 				target = scope:topbar_com_prestige
 			}
 
-			# Power Bloc Prestige Icon
+			# Power Bloc Prestige Item
 			create_struct = {
 				struct_type = 0
 				struct_scope = topbar_com_bloc_prestige
@@ -43,7 +43,7 @@ com_topbar_setup = {
 				target = scope:topbar_com_bloc_prestige
 			}
 
-			# Power Bloc Cohesion Icon
+			# Power Bloc Cohesion Item
 			create_struct = {
 				struct_type = 0
 				struct_scope = topbar_com_bloc_cohesion
@@ -59,7 +59,23 @@ com_topbar_setup = {
 				target = scope:topbar_com_bloc_cohesion
 			}
 
-			# Legitimacy Icon
+			# Power Bloc Size Item
+			create_struct = {
+				struct_type = 0
+				struct_scope = topbar_com_bloc_size
+			}
+			scope:topbar_com_bloc_size = {
+				set_variable = {
+					name = com_name
+					value = flag:com_topbar_element_bloc_size
+				}
+			}
+			add_to_global_variable_list = {
+				name = com_topbar_items
+				target = scope:topbar_com_bloc_size
+			}
+
+			# Legitimacy Item
 			create_struct = {
 				struct_type = 0
 				struct_scope = topbar_com_legitimacy
@@ -75,7 +91,7 @@ com_topbar_setup = {
 				target = scope:topbar_com_legitimacy
 			}
 
-			# Innovation Icon
+			# Innovation Item
 			create_struct = {
 				struct_type = 0
 				struct_scope = topbar_com_innovation
@@ -91,7 +107,7 @@ com_topbar_setup = {
 				target = scope:topbar_com_innovation
 			}
 
-			# Companies Icon
+			# Companies Item
 			create_struct = {
 				struct_type = 0
 				struct_scope = topbar_com_companies
@@ -107,7 +123,23 @@ com_topbar_setup = {
 				target = scope:topbar_com_companies
 			}
 
-			# Army Size Icona
+			# Charters Item
+			create_struct = {
+				struct_type = 0
+				struct_scope = topbar_com_charters
+			}
+			scope:topbar_com_charters = {
+				set_variable = {
+					name = com_name
+					value = flag:com_topbar_element_charters
+				}
+			}
+			add_to_global_variable_list = {
+				name = com_topbar_items
+				target = scope:topbar_com_charters
+			}
+
+			# Army Size Item
 			create_struct = {
 				struct_type = 0
 				struct_scope = topbar_com_army_size
@@ -123,7 +155,7 @@ com_topbar_setup = {
 				target = scope:topbar_com_army_size
 			}
 
-			# Navy Size Icon
+			# Navy Size Item
 			create_struct = {
 				struct_type = 0
 				struct_scope = topbar_com_navy_size
@@ -137,6 +169,22 @@ com_topbar_setup = {
 			add_to_global_variable_list = {
 				name = com_topbar_items
 				target = scope:topbar_com_navy_size
+			}
+
+			# Interests Item
+			create_struct = {
+				struct_type = 0
+				struct_scope = topbar_com_interests
+			}
+			scope:topbar_com_interests = {
+				set_variable = {
+					name = com_name
+					value = flag:com_topbar_element_interests
+				}
+			}
+			add_to_global_variable_list = {
+				name = com_topbar_items
+				target = scope:topbar_com_interests
 			}
 		}
 	}

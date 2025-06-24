@@ -22,6 +22,14 @@ com_topbar_element_bloc_cohesion = {
 	}
 }
 
+com_topbar_element_bloc_size = {
+	scope = country
+
+	is_shown = {
+		exists = power_bloc
+	}
+}
+
 com_topbar_element_legitimacy = {
 	scope = country
 
@@ -46,6 +54,14 @@ com_topbar_element_companies = {
 	}
 }
 
+com_topbar_element_charters = {
+	scope = country
+
+	is_shown = {
+		always = yes
+	}
+}
+
 com_topbar_element_army_size = {
 	scope = country
 
@@ -55,6 +71,14 @@ com_topbar_element_army_size = {
 }
 
 com_topbar_element_navy_size = {
+	scope = country
+
+	is_shown = {
+		always = yes
+	}
+}
+
+com_topbar_element_interests = {
 	scope = country
 
 	is_shown = {
