@@ -8,47 +8,47 @@ com_topbar_setup = {
 	effect = {
 		# Adding base game elements
 		#= Prestige
-		add_topbar_element = {
+		add_com_topbar_element = {
 			element_name = com_topbar_element_prestige
 		}
 		#= Power Bloc Prestige
-		add_topbar_element = {
+		add_com_topbar_element = {
 			element_name = com_topbar_element_bloc_prestige
 		}
 		#= Power Bloc Cohesion
-		add_topbar_element = {
+		add_com_topbar_element = {
 			element_name = com_topbar_element_bloc_cohesion
 		}
 		#= Power Bloc Size
-		add_topbar_element = {
+		add_com_topbar_element = {
 			element_name = com_topbar_element_bloc_size
 		}
 		#= Legitimacy
-		add_topbar_element = {
+		add_com_topbar_element = {
 			element_name = com_topbar_element_legitimacy
 		}
 		#= Innovation
-		add_topbar_element = {
+		add_com_topbar_element = {
 			element_name = com_topbar_element_innovation
 		}
 		#= Companies
-		add_topbar_element = {
+		add_com_topbar_element = {
 			element_name = com_topbar_element_companies
 		}
 		#= Charters
-		add_topbar_element = {
+		add_com_topbar_element = {
 			element_name = com_topbar_element_charters
 		}
 		#= Army Size
-		add_topbar_element = {
+		add_com_topbar_element = {
 			element_name = com_topbar_element_army_size
 		}
 		#= Navy Size
-		add_topbar_element = {
+		add_com_topbar_element = {
 			element_name = com_topbar_element_navy_size
 		}
 		#= Interests
-		add_topbar_element = {
+		add_com_topbar_element = {
 			element_name = com_topbar_element_interests
 		}
 

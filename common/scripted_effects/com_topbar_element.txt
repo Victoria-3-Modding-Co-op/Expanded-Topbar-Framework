@@ -1,4 +1,4 @@
-﻿add_topbar_element = {
+﻿add_com_topbar_element = {
 	random_country = {
 		limit = {
 			country_rank >= rank_value:great_power
