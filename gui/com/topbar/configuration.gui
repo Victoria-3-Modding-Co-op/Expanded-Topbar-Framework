@@ -163,9 +163,20 @@ types com_topbar_types {
                         using = simple_frame
                     }
                     textbox = {
-                        text = com_topbar_configuration_add_header_element
-                        minimumsize = { 415 50 }
+                        text = com_topbar_configuration_add_header_source
+                        minimumsize = { 230 60 }
                         align = left
+                        default_format = "#bold"
+                        multiline = yes
+                        autoresize = yes
+                        parentanchor = vcenter
+                    }
+                    vertical_divider = {}
+                    textbox = {
+                        text = com_topbar_configuration_add_header_element
+                        minimumsize = { 155 60 }
+                        default_format = "#bold"
+                        align = center
                         multiline = yes
                         autoresize = yes
                         parentanchor = vcenter
@@ -173,7 +184,8 @@ types com_topbar_types {
                     vertical_divider = {}
                     textbox = {
                         text = com_topbar_configuration_add_header_first
-                        minimumsize = { 50 50 }
+                        minimumsize = { 50 60 }
+                        default_format = "#bold"
                         align = center
                         multiline = yes
                         autoresize = yes
@@ -181,7 +193,8 @@ types com_topbar_types {
                     vertical_divider = {}
                     textbox = {
                         text = com_topbar_configuration_add_header_second
-                        minimumsize = { 50 50 }
+                        minimumsize = { 50 60 }
+                        default_format = "#bold"
                         align = center
                         multiline = yes
                         autoresize = yes
@@ -244,17 +257,30 @@ types com_topbar_types {
 
         flowcontainer = {
             minimumsize = { 415 60 }
-            flowcontainer = {
+            spacing = 15
+            textbox = {
+                text = "[Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_source'))]"
+                tooltip = "[Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_source_tooltip'))]"
+                size = { 230 60 }
+                align = left
                 parentanchor = vcenter
-                background = {
-                    using = dark_area_rounded
-                    margin_top = -8
-                    margin_bottom = -8
-                    margin_left = 5
-                    margin_right = 20
-                }
+            }
+            vertical_divider = {}
+            widget = {
+                size = { 155 60 }
+                flowcontainer = {
+                    position = { -8 0 }
+                    parentanchor = center
+                    background = {
+                        using = dark_area_rounded
+                        margin_top = -8
+                        margin_bottom = -8
+                        margin_left = 5
+                        margin_right = 20
+                    }
 
-                com_topbar_element = {}
+                    com_topbar_element = {}
+                }
             }
         }
 
@@ -267,17 +293,22 @@ types com_topbar_types {
             tooltip = com_topbar_configuration_add_first_tooltip
             datacontext = "[GetScriptedGui('com_topbar_toggle_element_first_line')]"
             onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
-            flowcontainer = {
-                tooltip = com_topbar_configuration_add_second_tooltip
-                direction = vertical
-                parentanchor = center
+            widget = {
+                visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
+                tooltip = com_topbar_configuration_remove_first_tooltip
+                size = { 100% 100% }
                 icon = {
-                    visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
+                    parentanchor = center
                     size = { 30 30 }
                     texture = gfx/interface/icons/generic_icons/red_cross.dds
                 }
+            }
+            widget = {
+                visible = "[Not(ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End))]"
+                tooltip = com_topbar_configuration_add_first_tooltip
+                size = { 100% 100% }
                 icon = {
-                    visible = "[Not(ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End))]"
+                    parentanchor = center
                     size = { 30 30 }
                     texture = gfx/interface/icons/generic_icons/green_checkmark.dds
                 }
@@ -292,17 +323,22 @@ types com_topbar_types {
             size = { 50 50 }
             datacontext = "[GetScriptedGui('com_topbar_toggle_element_second_line')]"
             onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
-            flowcontainer = {
-                tooltip = com_topbar_configuration_add_second_tooltip
-                direction = vertical
-                parentanchor = center
+            widget = {
+                visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
+                tooltip = com_topbar_configuration_remove_second_tooltip
+                size = { 100% 100% }
                 icon = {
-                    visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
+                    parentanchor = center
                     size = { 30 30 }
                     texture = gfx/interface/icons/generic_icons/red_cross.dds
                 }
+            }
+            widget = {
+                visible = "[Not(ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End))]"
+                tooltip = com_topbar_configuration_add_second_tooltip
+                size = { 100% 100% }
                 icon = {
-                    visible = "[Not(ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End))]"
+                    parentanchor = center
                     size = { 30 30 }
                     texture = gfx/interface/icons/generic_icons/green_checkmark.dds
                 }

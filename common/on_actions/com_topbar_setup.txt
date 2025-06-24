@@ -6,185 +6,81 @@
 
 com_topbar_setup = {
 	effect = {
-		random_country = {
-			limit = {
-				country_rank >= rank_value:great_power
-			}
+		# Adding base game elements
+		#= Prestige
+		add_topbar_element = {
+			element_name = com_topbar_element_prestige
+		}
+		#= Power Bloc Prestige
+		add_topbar_element = {
+			element_name = com_topbar_element_bloc_prestige
+		}
+		#= Power Bloc Cohesion
+		add_topbar_element = {
+			element_name = com_topbar_element_bloc_cohesion
+		}
+		#= Power Bloc Size
+		add_topbar_element = {
+			element_name = com_topbar_element_bloc_size
+		}
+		#= Legitimacy
+		add_topbar_element = {
+			element_name = com_topbar_element_legitimacy
+		}
+		#= Innovation
+		add_topbar_element = {
+			element_name = com_topbar_element_innovation
+		}
+		#= Companies
+		add_topbar_element = {
+			element_name = com_topbar_element_companies
+		}
+		#= Charters
+		add_topbar_element = {
+			element_name = com_topbar_element_charters
+		}
+		#= Army Size
+		add_topbar_element = {
+			element_name = com_topbar_element_army_size
+		}
+		#= Navy Size
+		add_topbar_element = {
+			element_name = com_topbar_element_navy_size
+		}
+		#= Interests
+		add_topbar_element = {
+			element_name = com_topbar_element_interests
+		}
 
-			# Prestige Item
-			create_struct = {
-				struct_type = 0
-				struct_scope = topbar_com_prestige
+		# Setting up a default topbar
+		every_country = {
+			add_to_variable_list = {
+				name = com_topbar_first_line
+				target = scope:com_topbar_element_prestige
 			}
-			scope:topbar_com_prestige = {
-				set_variable = {
-					name = com_name
-					value = flag:com_topbar_element_prestige
-				}
+			add_to_variable_list = {
+				name = com_topbar_first_line
+				target = scope:com_topbar_element_legitimacy
 			}
-			add_to_global_variable_list = {
-				name = com_topbar_items
-				target = scope:topbar_com_prestige
+			add_to_variable_list = {
+				name = com_topbar_first_line
+				target = scope:com_topbar_element_innovation
 			}
-
-			# Power Bloc Prestige Item
-			create_struct = {
-				struct_type = 0
-				struct_scope = topbar_com_bloc_prestige
+			add_to_variable_list = {
+				name = com_topbar_first_line
+				target = scope:com_topbar_element_companies
 			}
-			scope:topbar_com_bloc_prestige = {
-				set_variable = {
-					name = com_name
-					value = flag:com_topbar_element_bloc_prestige
-				}
+			add_to_variable_list = {
+				name = com_topbar_first_line
+				target = scope:com_topbar_element_interests
 			}
-			add_to_global_variable_list = {
-				name = com_topbar_items
-				target = scope:topbar_com_bloc_prestige
+			add_to_variable_list = {
+				name = com_topbar_first_line
+				target = scope:com_topbar_element_army_size
 			}
-
-			# Power Bloc Cohesion Item
-			create_struct = {
-				struct_type = 0
-				struct_scope = topbar_com_bloc_cohesion
-			}
-			scope:topbar_com_bloc_cohesion = {
-				set_variable = {
-					name = com_name
-					value = flag:com_topbar_element_bloc_cohesion
-				}
-			}
-			add_to_global_variable_list = {
-				name = com_topbar_items
-				target = scope:topbar_com_bloc_cohesion
-			}
-
-			# Power Bloc Size Item
-			create_struct = {
-				struct_type = 0
-				struct_scope = topbar_com_bloc_size
-			}
-			scope:topbar_com_bloc_size = {
-				set_variable = {
-					name = com_name
-					value = flag:com_topbar_element_bloc_size
-				}
-			}
-			add_to_global_variable_list = {
-				name = com_topbar_items
-				target = scope:topbar_com_bloc_size
-			}
-
-			# Legitimacy Item
-			create_struct = {
-				struct_type = 0
-				struct_scope = topbar_com_legitimacy
-			}
-			scope:topbar_com_legitimacy = {
-				set_variable = {
-					name = com_name
-					value = flag:com_topbar_element_legitimacy
-				}
-			}
-			add_to_global_variable_list = {
-				name = com_topbar_items
-				target = scope:topbar_com_legitimacy
-			}
-
-			# Innovation Item
-			create_struct = {
-				struct_type = 0
-				struct_scope = topbar_com_innovation
-			}
-			scope:topbar_com_innovation = {
-				set_variable = {
-					name = com_name
-					value = flag:com_topbar_element_innovation
-				}
-			}
-			add_to_global_variable_list = {
-				name = com_topbar_items
-				target = scope:topbar_com_innovation
-			}
-
-			# Companies Item
-			create_struct = {
-				struct_type = 0
-				struct_scope = topbar_com_companies
-			}
-			scope:topbar_com_companies = {
-				set_variable = {
-					name = com_name
-					value = flag:com_topbar_element_companies
-				}
-			}
-			add_to_global_variable_list = {
-				name = com_topbar_items
-				target = scope:topbar_com_companies
-			}
-
-			# Charters Item
-			create_struct = {
-				struct_type = 0
-				struct_scope = topbar_com_charters
-			}
-			scope:topbar_com_charters = {
-				set_variable = {
-					name = com_name
-					value = flag:com_topbar_element_charters
-				}
-			}
-			add_to_global_variable_list = {
-				name = com_topbar_items
-				target = scope:topbar_com_charters
-			}
-
-			# Army Size Item
-			create_struct = {
-				struct_type = 0
-				struct_scope = topbar_com_army_size
-			}
-			scope:topbar_com_army_size = {
-				set_variable = {
-					name = com_name
-					value = flag:com_topbar_element_army_size
-				}
-			}
-			add_to_global_variable_list = {
-				name = com_topbar_items
-				target = scope:topbar_com_army_size
-			}
-
-			# Navy Size Item
-			create_struct = {
-				struct_type = 0
-				struct_scope = topbar_com_navy_size
-			}
-			scope:topbar_com_navy_size = {
-				set_variable = {
-					name = com_name
-					value = flag:com_topbar_element_navy_size
-				}
-			}
-			add_to_global_variable_list = {
-				name = com_topbar_items
-				target = scope:topbar_com_navy_size
-			}
-
-			# Interests Item
-			create_struct = {
-				struct_type = 0
-				struct_scope = topbar_com_interests
-			}
-			scope:topbar_com_interests = {
-				set_variable = {
-					name = com_name
-					value = flag:com_topbar_element_interests
-				}
-			}
-			add_to_global_variable_list = {
-				name = com_topbar_items
-				target = scope:topbar_com_interests
+			add_to_variable_list = {
+				name = com_topbar_first_line
+				target = scope:com_topbar_element_navy_size
 			}
 		}
 	}

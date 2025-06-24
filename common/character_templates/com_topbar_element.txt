@@ -1,0 +1,13 @@
+﻿com_topbar_element_template = {
+	# I am building my own topbar system
+	# with Blackjack and Hookers
+	first_name = Blackjack
+	last_name = and_Hookers
+
+	# We do not want our topbar element to die ;)
+	on_created = {
+		set_character_immortal = yes
+		exile_character = yes
+		place_character_in_void = 10000
+	}
+}

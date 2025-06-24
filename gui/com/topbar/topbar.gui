@@ -10,6 +10,7 @@ types com_topbar_types {
         maximumsize = { 650 80 }
         position = { 0 0 }
         margin = { 80 0 }
+        margin_top = 5
         margin_bottom = 10
         max_update_rate = 8
         spacing = 0
@@ -87,7 +88,7 @@ types com_topbar_types {
 
     type com_topbar_row = flowcontainer {
         margin = { 5 0 }
-        spacing = 10
+        spacing = 5
         maximumsize = { 520 34 }
         minimumsize = { 520 34 }
         #datamodel = "[Country.MakeScope.GetList('com_topbar_first_line')]"
@@ -116,11 +117,11 @@ types com_topbar_types {
         tooltip = "[Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_tooltip'))]"
         visible = "[GetScriptedGui(Localize(Scope.Var('com_name').GetFlagName)).IsShown(GuiScope.SetRoot(Country.MakeScope).End)]"
 
-        button = {
-            parentanchor = top|left
-            using = glow_button
-            size = { 100% 100% }
-            block "element_click" {
+        block "element_click" {
+            button = {
+                parentanchor = top|left
+                using = glow_button
+                size = { 100% 100% }
                 # Only enable map mode if it is set
                 visible = "[Not(ObjectsEqual(
                         Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_window')),
