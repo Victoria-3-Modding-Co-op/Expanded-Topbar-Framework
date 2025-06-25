@@ -2,7 +2,7 @@
 This is a framework for mods to add elements to the topbar.
 
 ## Steam Page
-TBD
+https://steamcommunity.com/sharedfiles/filedetails/?id=3508296963
 
 ## How to Use
 ### Adding a new Topbar element
@@ -51,3 +51,35 @@ com_topbar_element_prestige = {
     }
 }
 ```
+### Adding a Topbar element as Default
+To add your element to the topbar on game start you need to add it to the `com_topbar_second_line` country scope list.
+
+> **NOTE:** do not add your element to `com_topbar_first_line` since that is reserved for base game elements at game start.
+
+The `add_com_topbar_element` effect also sets a scope with the element name which can be used to add your element to the topbar directly.
+
+This example will add the `my_custom_topbar_element` element only for Britain and the `my_other_custom_topbar_element` element for all countries: 
+```
+add_com_topbar_element = {
+    element_name = my_custom_topbar_element
+}
+add_com_topbar_element = {
+    element_name = my_other_custom_topbar_element
+}
+
+c:GBR = {
+    add_to_variable_list = {
+        name = com_topbar_second_line
+        target = scope:my_custom_topbar_element
+    }
+}
+
+every_country = {
+    add_to_variable_list = {
+        name = com_topbar_second_line
+        target = scope:my_other_custom_topbar_element
+    }
+}
+```
+
+This can be done whenever you want, but it is recommended to either do it in `common/history/global` or in a `on_game_started_after_lobby` on action.

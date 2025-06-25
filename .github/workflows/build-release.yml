@@ -18,7 +18,7 @@ on:
       publish:
         description: 'Publish on Workshop'
         required: false
-        default: 'false'
+        default: 'true'
         type: choice
         options:
           - 'true'
@@ -26,7 +26,7 @@ on:
       workshop-id:
         description: 'Workshop Identifier'
         required: false
-        default: '3385002128'
+        default: '3508296963'
         type: string
 
 jobs:
