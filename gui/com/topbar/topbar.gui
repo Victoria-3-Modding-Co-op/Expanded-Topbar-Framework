@@ -115,7 +115,17 @@ types com_topbar_types {
         spacing = 5
         using = tooltip_below
         tooltip = "[Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_tooltip'))]"
-        visible = "[GetScriptedGui(Localize(Scope.Var('com_name').GetFlagName)).IsShown(GuiScope.SetRoot(Country.MakeScope).End)]"
+        visible = "[And3(
+            GetScriptedGui(Localize(Scope.Var('com_name').GetFlagName)).IsShown(GuiScope.SetRoot(Country.MakeScope).End),
+            Not(ObjectsEqual(
+                Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_value')),
+                Concatenate(Scope.Var('com_name').GetFlagName, '_value')
+            )),
+            Not(ObjectsEqual(
+                Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_icon')),
+                Concatenate(Scope.Var('com_name').GetFlagName, '_icon')
+            ))
+        )]"
 
         block "element_click" {
             button = {
