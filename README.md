@@ -2,9 +2,14 @@
 This is a framework for mods to add elements to the topbar.
 
 ## Steam Page
-https://steamcommunity.com/sharedfiles/filedetails/?id=3508296963
+- https://steamcommunity.com/sharedfiles/filedetails/?id=3508296963
 
-## How to Use
+## Content
+- [Adding a new Topbar element](#adding-a-new-topbar-element)
+- [Adding a Topbar element as default](#adding-a-topbar-element-as-default)
+- [Achieving compatibility with existing Save Games](#achieving-compatibility-with-existing-save-games)
+- [Error Suppression](#error-suppression)
+
 ### Adding a new Topbar element
 > **NOTE:** all of this should be configured in your own mod!
 
@@ -83,3 +88,62 @@ every_country = {
 ```
 
 This can be done whenever you want, but it is recommended to either do it in `common/history/global` or in a `on_game_started_after_lobby` on action.
+
+### Achieving compatibility with existing Save Games
+
+Since topbar elements should generally be added at game start/setup, they will not show up for existing save games.
+To mitigate this, you can set up a monthly on action to add your elements after the game started if they are missing.
+
+Here is an example for `com_topbar_element_prestige` as used above:
+```
+# Adding base game elements if they are missing
+on_monthly_pulse = {
+    on_actions = {
+        com_topbar_save_game_compatibility
+    }
+}
+
+# Adding base game elements if they are missing
+com_topbar_save_game_compatibility = {
+    effect = {
+        #= Prestige
+        if = {
+            limit = {
+                NOT = {
+                    any_in_global_list = {
+                        variable = com_topbar_items
+                        var:com_name ?= flag:com_topbar_element_prestige
+                    }
+                }
+            }
+            add_com_topbar_element = {
+                element_name = com_topbar_element_prestige
+            }
+            every_country = {
+                add_to_variable_list = {
+                    name = com_topbar_first_line
+                    target = scope:com_topbar_element_prestige
+                }
+            }
+        }
+    }
+}
+```
+
+### Error Suppression
+
+Since the Expanded Topbar Framework can be totally optional, you might want to suppress errors that crop up when it is missing.
+This can be done by adding a `add_com_topbar_element ` scripted effect to your mod that will be overwritten by the framework.
+
+Here is an example of how it could be done:
+```
+add_com_topbar_element = {
+    if = {
+        limit = { always = no }
+        set_variable = $element_name$
+        remove_variable = $element_name$
+    }
+}
+```
+
+> **NOTE:** This scripted effect needs to be defined in a file that is loaded before the Frameworks effect. The recommended filename is `00_com_topbar_element.txt`.
