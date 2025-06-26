@@ -1,5 +1,7 @@
 # Expanded Topbar Framework
-This is a framework for mods to add elements to the topbar.
+![banner.png](docs/banner.png)
+
+This is a framework for mods to add elements to the expanded topbar.
 
 ## Steam Page
 - https://steamcommunity.com/sharedfiles/filedetails/?id=3508296963
