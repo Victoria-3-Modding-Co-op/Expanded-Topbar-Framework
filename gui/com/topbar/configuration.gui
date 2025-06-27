@@ -216,7 +216,10 @@ types com_topbar_types {
                             spacing = 5
                             minimumsize = { 640 290 }
                             item = {
-                                com_topbar_configuration_add_element = {}
+                                container = {
+                                    visible = "[Scope.Var('com_name').IsSet]"
+                                    com_topbar_configuration_add_element = {}
+                                }
                             }
                         }
                     }

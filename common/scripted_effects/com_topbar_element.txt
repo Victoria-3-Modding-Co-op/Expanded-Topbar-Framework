@@ -1,7 +1,7 @@
 ﻿add_com_topbar_element = {
 	random_country = {
 		limit = {
-			country_rank >= rank_value:great_power
+			is_player = yes
 		}
 		save_temporary_scope_as = com_topbar_random_country
 	}

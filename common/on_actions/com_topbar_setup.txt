@@ -90,7 +90,7 @@ com_topbar_setup = {
 
 
 # Adding base game elements if they are missing
-on_monthly_pulse_country = {
+on_half_yearly_pulse_country = {
 	on_actions = {
 		com_topbar_save_game_compatibility
 	}
@@ -98,6 +98,78 @@ on_monthly_pulse_country = {
 
 # Adding base game elements if they are missing
 com_topbar_save_game_compatibility = {
+	trigger = {
+		NOR = {
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_prestige
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_bloc_prestige
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_bloc_cohesion
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_prestige
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_prestige
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_prestige
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_prestige
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_prestige
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_prestige
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_bloc_size
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_legitimacy
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_innovation
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_companies
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_charters
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_army_size
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_navy_size
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_interests
+			}
+		}
+	}
 	effect = {
 		#= Prestige
 		if = {
@@ -132,12 +204,6 @@ com_topbar_save_game_compatibility = {
 			add_com_topbar_element = {
 				element_name = com_topbar_element_bloc_prestige
 			}
-			every_country = {
-				add_to_variable_list = {
-					name = com_topbar_first_line
-					target = scope:com_topbar_element_bloc_prestige
-				}
-			}
 		}
 		#= Power Bloc Cohesion
 		if = {
@@ -152,12 +218,6 @@ com_topbar_save_game_compatibility = {
 			add_com_topbar_element = {
 				element_name = com_topbar_element_bloc_cohesion
 			}
-			every_country = {
-				add_to_variable_list = {
-					name = com_topbar_first_line
-					target = scope:com_topbar_element_bloc_cohesion
-				}
-			}
 		}
 		#= Power Bloc Size
 		if = {
@@ -171,12 +231,6 @@ com_topbar_save_game_compatibility = {
 			}
 			add_com_topbar_element = {
 				element_name = com_topbar_element_bloc_size
-			}
-			every_country = {
-				add_to_variable_list = {
-					name = com_topbar_first_line
-					target = scope:com_topbar_element_bloc_size
-				}
 			}
 		}
 		#= Legitimacy
@@ -232,12 +286,6 @@ com_topbar_save_game_compatibility = {
 			add_com_topbar_element = {
 				element_name = com_topbar_element_companies
 			}
-			every_country = {
-				add_to_variable_list = {
-					name = com_topbar_first_line
-					target = scope:com_topbar_element_companies
-				}
-			}
 		}
 		#= Charters
 		if = {
@@ -251,12 +299,6 @@ com_topbar_save_game_compatibility = {
 			}
 			add_com_topbar_element = {
 				element_name = com_topbar_element_charters
-			}
-			every_country = {
-				add_to_variable_list = {
-					name = com_topbar_first_line
-					target = scope:com_topbar_element_charters
-				}
 			}
 		}
 		#= Army Size

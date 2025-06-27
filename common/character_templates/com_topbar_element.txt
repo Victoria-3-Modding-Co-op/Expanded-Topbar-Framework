@@ -6,8 +6,8 @@
 
 	# We do not want our topbar element to die ;)
 	on_created = {
+		set_variable = is_topbar_element
 		set_character_immortal = yes
-		exile_character = yes
 		place_character_in_void = 10000
 	}
 }
