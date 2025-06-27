@@ -90,7 +90,7 @@ com_topbar_setup = {
 
 
 # Adding base game elements if they are missing
-on_monthly_pulse = {
+on_monthly_pulse_country = {
 	on_actions = {
 		com_topbar_save_game_compatibility
 	}
