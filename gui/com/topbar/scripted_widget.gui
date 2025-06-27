@@ -4,6 +4,7 @@ widget = {
     size = { 100% 100% }
     datacontext = "[GetMetaPlayer.GetPlayedOrObservedCountry]"
     visible = "[Country.IsValid]"
+    max_update_rate = 60
 
     container = {
         using = hud_visibility
@@ -49,6 +50,7 @@ widget = {
     layer = popups
     datacontext = "[GetMetaPlayer.GetPlayedOrObservedCountry]"
     visible = "[Country.IsValid]"
+    max_update_rate = 8
 
     widget = {
         using = hud_visibility

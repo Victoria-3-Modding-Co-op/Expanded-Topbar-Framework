@@ -12,7 +12,7 @@ types com_topbar_types {
         margin = { 80 0 }
         margin_top = 5
         margin_bottom = 10
-        max_update_rate = 8
+        max_update_rate = 60
         spacing = 0
         using = clickthrough_blocker
         using = default_fade_in_out
@@ -103,8 +103,11 @@ types com_topbar_types {
         }
 
         item = {
-            com_topbar_element = {
-                parentanchor = vcenter
+            container = {
+                visible = "[Scope.Var('com_name').IsSet]"
+                com_topbar_element = {
+                    parentanchor = vcenter
+                }
             }
         }
     }
