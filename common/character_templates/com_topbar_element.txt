@@ -3,6 +3,8 @@
 	# with Blackjack and Hookers
 	first_name = Blackjack
 	last_name = and_Hookers
+	culture = cu:zapotec
+	religion = rel:animist
 
 	# We do not want our topbar element to die ;)
 	on_created = {
@@ -10,5 +12,13 @@
 		set_character_immortal = yes
 		place_character_in_void = 10000
 		set_variable = memento_mori_immunity
+	}
+
+	# Increase popularity to prevent culling
+	traits = {
+		ambitious
+		brave
+		aesthete
+		celebrity_commander
 	}
 }
