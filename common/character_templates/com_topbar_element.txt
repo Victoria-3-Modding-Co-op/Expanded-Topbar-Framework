@@ -9,5 +9,6 @@
 		set_variable = is_topbar_element
 		set_character_immortal = yes
 		place_character_in_void = 10000
+		set_variable = memento_mori_immunity
 	}
 }

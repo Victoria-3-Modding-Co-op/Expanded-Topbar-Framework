@@ -11,11 +11,10 @@ widget = {
         parentanchor = top|left
         container = {
             visible = "[And(
-                Not(Or4(
+                Not(Or3(
                     InformationPanelBar.IsAnyPanelOpen,
                     MapListPanelManager.IsVisible,
-                    GetVariableSystem.Exists('com_open_window'),
-                    GetVariableSystem.Exists('com_alert_action')
+                    GetVariableSystem.Exists('com_open_window')
                 )),
                 Or(
                     DataModelHasItems(Country.MakeScope.GetList('com_topbar_first_line')),

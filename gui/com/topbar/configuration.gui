@@ -105,17 +105,41 @@ types com_topbar_types {
                     direction = vertical
                     minimumsize = { 640 -1 }
                     maximumsize = { 640 -1 }
-                    com_topbar_row = {
+                    flowcontainer = {
                         parentanchor = hcenter
-                        datamodel = "[Country.MakeScope.GetList('com_topbar_first_line')]"
-                        blockoverride "element_click" {}
+                        spacing = 40
+                        com_topbar_row = {
+                            datamodel = "[Country.MakeScope.GetList('com_topbar_first_line')]"
+                            blockoverride "element_click" {}
+                        }
+                        button_icon_round = {
+                            parentanchor = vcenter
+                            size = { 26 26 }
+                            onclick = "[GetScriptedGui('com_topbar_clear_first_line').Execute(GuiScope.SetRoot(Country.MakeScope).End)]"
+                            tooltip = com_topbar_configuration_clear_first_tooltip
+                            blockoverride "icon" {
+                                texture = "gfx/interface/buttons/button_icons/reset.dds"
+                            }
+                        }
+                    }
+                    flowcontainer = {
+                        parentanchor = hcenter
+                        spacing = 40
+                        com_topbar_row = {
+                            datamodel = "[Country.MakeScope.GetList('com_topbar_second_line')]"
+                            blockoverride "element_click" {}
+                        }
+                        button_icon_round = {
+                            parentanchor = vcenter
+                            size = { 26 26 }
+                            onclick = "[GetScriptedGui('com_topbar_clear_second_line').Execute(GuiScope.SetRoot(Country.MakeScope).End)]"
+                            tooltip = com_topbar_configuration_clear_second_tooltip
+                            blockoverride "icon" {
+                                texture = "gfx/interface/buttons/button_icons/reset.dds"
+                            }
+                        }
                     }
 
-                    com_topbar_row = {
-                        parentanchor = hcenter
-                        datamodel = "[Country.MakeScope.GetList('com_topbar_second_line')]"
-                        blockoverride "element_click" {}
-                    }
                 }
             }
 
@@ -213,10 +237,10 @@ types com_topbar_types {
                         flowcontainer = {
                             direction = vertical
                             datamodel = "[GetGlobalList('com_topbar_items')]"
-                            spacing = 5
                             minimumsize = { 640 290 }
                             item = {
-                                container = {
+                                flowcontainer = {
+                                    margin_bottom = 5
                                     visible = "[Scope.Var('com_name').IsSet]"
                                     com_topbar_configuration_add_element = {}
                                 }

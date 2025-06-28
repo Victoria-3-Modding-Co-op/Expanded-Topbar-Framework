@@ -88,7 +88,6 @@ com_topbar_setup = {
 	}
 }
 
-
 # Adding base game elements if they are missing
 on_half_yearly_pulse_country = {
 	on_actions = {

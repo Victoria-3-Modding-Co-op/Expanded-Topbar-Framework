@@ -114,6 +114,7 @@ types com_topbar_types {
 
     type com_topbar_element = flowcontainer {
         minimumsize = { -1 30 }
+        margin_top = 3
         margin_left = 5
         spacing = 5
         using = tooltip_below
@@ -145,6 +146,8 @@ types com_topbar_types {
         }
 
         textbox = {
+            minimumsize = { -1 30 }
+            maximumsize = { -1 30 }
             parentanchor = vcenter
             text = "[Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_icon'))]"
             autoresize = yes
@@ -154,6 +157,8 @@ types com_topbar_types {
         }
 
         textbox = {
+            minimumsize = { -1 30 }
+            maximumsize = { -1 30 }
             parentanchor = vcenter
             text = "[Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_value'))]"
             autoresize = yes
