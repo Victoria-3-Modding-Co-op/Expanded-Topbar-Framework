@@ -7,7 +7,8 @@ This is a framework for mods to add elements to the expanded topbar.
 - https://steamcommunity.com/sharedfiles/filedetails/?id=3508296963
 
 ## Content
-- [Adding a new Topbar element](#adding-a-new-topbar-element)
+- [Starting Knowledge](#starting-knowledge)
+- [Creating a new Topbar element](#creating-a-new-topbar-element)
 - [Adding a Topbar element as default](#adding-a-topbar-element-as-default)
 - [Achieving compatibility with existing Save Games](#achieving-compatibility-with-existing-save-games)
 - [Error Suppression](#error-suppression)
@@ -22,7 +23,7 @@ add_com_topbar_element = {
 }
 ```
 This effect is then called, and takes (`element_name`) as an input.
-### Creating your new Topbar element
+### Creating a new Topbar element
 > **NOTE:** all of this should be configured in your own mod!
 
 #### Part 1 - Localization
