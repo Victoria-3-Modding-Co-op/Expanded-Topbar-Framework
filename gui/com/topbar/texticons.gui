@@ -42,3 +42,12 @@ texticon = {
     fontsize = 43
   }
 }
+
+texticon = {
+  icon = com_unrealized_taxes
+  iconsize = {
+    offset = { 0 15 }
+    texture = "gfx/interface/budget/budget_set_very_low.dds"
+    fontsize = 70
+  }
+}

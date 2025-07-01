@@ -36,6 +36,14 @@ com_topbar_error_suppression.1 = {
 		fix_variable_error = { variable = com_topbar_element_army_size }
 		fix_variable_error = { variable = com_topbar_element_navy_size }
 		fix_variable_error = { variable = com_topbar_element_interests }
+		fix_variable_error = { variable = com_topbar_element_unemployed_pops }
+		fix_variable_error = { variable = com_topbar_element_subsistence_pops }
+		fix_variable_error = { variable = com_topbar_element_unrealized_taxes }
+
+		# Calculations
+		fix_variable_error = { variable = com_topbar_subsistence_pops }
+
+
 	}
 	
 	orphan = yes

@@ -85,3 +85,27 @@ com_topbar_element_interests = {
 		always = yes
 	}
 }
+
+com_topbar_element_unemployed_pops = {
+	scope = country
+
+	is_shown = {
+		always = yes
+	}
+}
+
+com_topbar_element_subsistence_pops = {
+	scope = country
+
+	is_shown = {
+		always = yes
+	}
+}
+
+com_topbar_element_unrealized_taxes = {
+	scope = country
+
+	is_shown = {
+		always = yes
+	}
+}

@@ -53,9 +53,24 @@ com_topbar_setup = {
 		add_com_topbar_element = {
 			element_name = com_topbar_element_interests
 		}
+		#= Unemployed
+		add_com_topbar_element = {
+			element_name = com_topbar_element_unemployed_pops
+		}
+		#= Subsistence
+		add_com_topbar_element = {
+			element_name = com_topbar_element_subsistence_pops
+		}
+		#= Unrealized Taxes
+		add_com_topbar_element = {
+			element_name = com_topbar_element_unrealized_taxes
+		}
 
 		# Setting up a default topbar
 		every_country = {
+			# Calculate subsistence pops once for all countries
+			com_topbar_calculate_subsistence_pops = yes
+
 			add_to_variable_list = {
 				name = com_topbar_first_line
 				target = scope:com_topbar_element_prestige
@@ -89,9 +104,10 @@ com_topbar_setup = {
 }
 
 # Adding base game elements if they are missing
-on_half_yearly_pulse_country = {
+on_half_yearly_pulse = {
 	on_actions = {
 		com_topbar_save_game_compatibility
+		com_topbar_calculations
 	}
 }
 
@@ -166,6 +182,18 @@ com_topbar_save_game_compatibility = {
 			any_in_global_list = {
 				variable = com_topbar_items
 				var:com_name ?= flag:com_topbar_element_interests
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_unemployed_pops
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_subsistence_pops
+			}
+			any_in_global_list = {
+				variable = com_topbar_items
+				var:com_name ?= flag:com_topbar_element_unrealized_taxes
 			}
 		}
 	}
@@ -359,6 +387,60 @@ com_topbar_save_game_compatibility = {
 					target = scope:com_topbar_element_interests
 				}
 			}
+		}
+		#= Unemployed
+		if = {
+			limit = {
+				NOT = {
+					any_in_global_list = {
+						variable = com_topbar_items
+						var:com_name ?= flag:com_topbar_element_unemployed_pops
+					}
+				}
+			}
+			add_com_topbar_element = {
+				element_name = com_topbar_element_unemployed_pops
+			}
+		}
+		#= Subsistence
+		if = {
+			limit = {
+				NOT = {
+					any_in_global_list = {
+						variable = com_topbar_items
+						var:com_name ?= flag:com_topbar_element_subsistence_pops
+					}
+				}
+			}
+			add_com_topbar_element = {
+				element_name = com_topbar_element_subsistence_pops
+			}
+		}
+		#= Unrealized Taxes
+		if = {
+			limit = {
+				NOT = {
+					any_in_global_list = {
+						variable = com_topbar_items
+						var:com_name ?= flag:com_topbar_element_unrealized_taxes
+					}
+				}
+			}
+			add_com_topbar_element = {
+				element_name = com_topbar_element_unrealized_taxes
+			}
+		}
+	}
+}
+
+com_topbar_calculations = {
+	effect = {
+		every_country = {
+			limit = {
+				# We only need to do it for player countries
+				is_player = yes
+			}
+			com_topbar_calculate_subsistence_pops = yes
 		}
 	}
 }
