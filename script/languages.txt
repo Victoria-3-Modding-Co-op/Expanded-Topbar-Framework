@@ -7,4 +7,3 @@ polish
 russian
 simp_chinese
 spanish
-turkish
