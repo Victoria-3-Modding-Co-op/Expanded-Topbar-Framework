@@ -125,7 +125,7 @@ Add as many other elements as desired inside the `effect = {}` block.
 Since topbar elements should generally be added at game start/setup, they will not show up for existing save games.
 To mitigate this, you can set up a monthly on action to add your elements after the game started if they are missing.
 ##### Example 6
-Here is an example for `com_topbar_element_prestige` as used above:
+Here is an example for `my_other_custom_topbar_element` as used above:
 ```
 # Adding base game elements if they are missing
 on_monthly_pulse = {
@@ -143,17 +143,17 @@ my_custom_topbar_save_game_compatibility = {
                 NOT = {
                     any_in_global_list = {
                         variable = com_topbar_items
-                        var:com_name ?= flag:my_custom_topbar_element
+                        var:com_name ?= flag:my_other_custom_topbar_element
                     }
                 }
             }
             add_com_topbar_element = {
-                element_name = my_custom_topbar_element
+                element_name = my_other_custom_topbar_element
             }
             every_country = {
                 add_to_variable_list = {
                     name = com_topbar_second_line
-                    target = scope:my_custom_topbar_element
+                    target = scope:my_other_custom_topbar_element
                 }
             }
         }
