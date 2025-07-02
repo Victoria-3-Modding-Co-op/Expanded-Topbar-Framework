@@ -14,16 +14,16 @@
 				template = com_topbar_element_template
 				save_scope_as = $element_name$
 			}
-		}
-		scope:$element_name$ = {
-			set_variable = {
-				name = com_name
-				value = flag:$element_name$
+			scope:$element_name$ = {
+				set_variable = {
+					name = com_name
+					value = flag:$element_name$
+				}
 			}
-		}
-		add_to_global_variable_list = {
-			target = scope:$element_name$
-			name = com_topbar_items
+			add_to_global_variable_list = {
+				target = scope:$element_name$
+				name = com_topbar_items
+			}
 		}
 	}
 	else = {
@@ -38,16 +38,16 @@
 				template = com_topbar_element_template
 				save_scope_as = $element_name$
 			}
-		}
-		scope:$element_name$ = {
-			set_variable = {
-				name = com_name
-				value = flag:$element_name$
+			scope:$element_name$ = {
+				set_variable = {
+					name = com_name
+					value = flag:$element_name$
+				}
 			}
-		}
-		add_to_global_variable_list = {
-			target = scope:$element_name$
-			name = com_topbar_items
+			add_to_global_variable_list = {
+				target = scope:$element_name$
+				name = com_topbar_items
+			}
 		}
 	}
 }
