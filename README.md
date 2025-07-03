@@ -49,6 +49,8 @@ l_english:
  com_topbar_element_prestige_source: "Victoria 3"
  com_topbar_element_prestige_source_tooltip: "This element is part of the default Expanded Topbar Framework."
 ```
+> **NOTE:** the first Loc is not a conventional loc, it is named itself.>
+
 #### Part 2 - Scripted GUI
 Secondly, there needs to be an SGUI configured (in `your_mod_folder\common\scripted_guis`) that has the same name as the element (`<element name>`).
 Only the `is_shown` attribute is parsed by the framework.
