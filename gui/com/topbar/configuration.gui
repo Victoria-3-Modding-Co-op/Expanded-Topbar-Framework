@@ -306,7 +306,9 @@ types com_topbar_types {
                         margin_right = 20
                     }
 
-                    com_topbar_element = {}
+                    com_topbar_element = {
+                        blockoverride "element_click" {}
+                    }
                 }
             }
         }

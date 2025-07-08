@@ -1,2 +1,3 @@
 ﻿gui/com/topbar/scripted_widget.gui = com_topbar
 gui/com/topbar/scripted_widget.gui = com_topbar_popup
+gui/com/topbar/scripted_widget.gui = com_topbar_hidden_interactions

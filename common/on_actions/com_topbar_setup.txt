@@ -9,7 +9,6 @@ on_game_started_after_lobby = {
 on_monthly_pulse = {
 	on_actions = {
 		com_topbar_setup
-		com_topbar_calculations
 	}
 }
 
@@ -21,6 +20,10 @@ com_topbar_setup = {
 				# We only need to do it for player countries
 				is_player = yes
 			}
+
+			# Calculate subsistence pops
+			com_topbar_calculate_subsistence_pops = yes
+
 			#= Prestige
 			if = {
 				limit = {
@@ -238,6 +241,12 @@ com_topbar_setup = {
 				add_com_topbar_element = {
 					element_name = com_topbar_element_subsistence_pops
 				}
+				every_country = {
+					add_to_variable_list = {
+						name = com_topbar_first_line
+						target = scope:com_topbar_element_subsistence_pops
+					}
+				}
 			}
 			#= Unrealized Taxes
 			if = {
@@ -253,18 +262,6 @@ com_topbar_setup = {
 					element_name = com_topbar_element_unrealized_taxes
 				}
 			}
-		}
-	}
-}
-
-com_topbar_calculations = {
-	effect = {
-		every_country = {
-			limit = {
-				# We only need to do it for player countries
-				is_player = yes
-			}
-			com_topbar_calculate_subsistence_pops = yes
 		}
 	}
 }

@@ -104,3 +104,107 @@ widget = {
         }
     }
 }
+
+widget = {
+    name = "com_topbar_hidden_interactions"
+    allow_outside = yes
+    size = { 0 0 }
+    layer = popups
+    datacontext = "[GetMetaPlayer.GetPlayedOrObservedCountry]"
+    visible = "[Country.IsValid]"
+    max_update_rate = 8
+    alpha = 0
+
+    widget = {
+        visible = "[GetVariableSystem.HasValue('com_open_window', 'com_topbar_prestige')]"
+        state = {
+            name = _show
+            on_finish = "[MapListPanelManager.OpenCurrentPanel]"
+            on_finish = "[GetVariableSystem.Clear('com_open_window')]"
+        }
+    }
+
+    widget = {
+        visible = "[GetVariableSystem.HasValue('com_open_window', 'com_topbar_innovation')]"
+        state = {
+            name = _show
+            on_finish = "[InformationPanelBar.OpenPanel('tech_tree')]"
+            on_finish = "[GetVariableSystem.Clear('com_open_window')]"
+        }
+    }
+
+    widget = {
+        visible = "[GetVariableSystem.HasValue('com_open_window', 'com_topbar_army')]"
+        state = {
+            name = _show
+            on_finish = "[InformationPanelBar.OpenPanelTab('military', 'army')]"
+            on_finish = "[GetVariableSystem.Clear('com_open_window')]"
+        }
+    }
+
+    widget = {
+        visible = "[GetVariableSystem.HasValue('com_open_window', 'com_topbar_navy')]"
+        state = {
+            name = _show
+            on_finish = "[InformationPanelBar.OpenPanelTab('military', 'navy')]"
+            on_finish = "[GetVariableSystem.Clear('com_open_window')]"
+        }
+    }
+
+    widget = {
+        visible = "[GetVariableSystem.HasValue('com_open_window', 'com_topbar_interests')]"
+        state = {
+            name = _show
+            on_finish = "[InformationPanelBar.OpenPanel('diplomatic_overview')]"
+            on_finish = "[GetVariableSystem.Clear('com_open_window')]"
+        }
+    }
+
+    widget = {
+        visible = "[GetVariableSystem.HasValue('com_open_window', 'com_topbar_taxes')]"
+        state = {
+            name = _show
+            on_finish = "[InformationPanelBar.OpenPanel('budget')]"
+            on_finish = "[GetVariableSystem.Clear('com_open_window')]"
+        }
+    }
+
+    widget = {
+        visible = "[GetVariableSystem.HasValue('com_open_window', 'com_topbar_census')]"
+        state = {
+            name = _show
+            on_finish = "[InformationPanelBar.OpenPopBrowserPanel(Country.Self)]"
+            on_finish = "[GetVariableSystem.Clear('com_open_window')]"
+        }
+    }
+
+    widget = {
+        visible = "[GetVariableSystem.HasValue('com_open_window', 'com_topbar_companies')]"
+        state = {
+            name = _show
+            on_finish = "[InformationPanelBar.OpenPanel('companies')]"
+            on_finish = "[GetVariableSystem.Clear('com_open_window')]"
+        }
+    }
+
+    widget = {
+        visible = "[GetVariableSystem.HasValue('com_open_window', 'com_topbar_power_bloc')]"
+        state = {
+            name = _show
+            on_finish = "[InformationPanelBar.OpenPanel('power_bloc_panel')]"
+            on_finish = "[GetVariableSystem.Clear('com_open_window')]"
+        }
+    }
+
+    widget = {
+        visible = "[GetVariableSystem.HasValue('com_open_window', 'com_topbar_politics')]"
+        state = {
+            name = _show
+            on_finish = "[InformationPanelBar.OpenPanel('politics')]"
+            on_finish = "[GetVariableSystem.Clear('com_open_window')]"
+        }
+    }
+
+    #"[InformationPanelBar.OpenPanel('power_bloc_panel')]"
+
+}

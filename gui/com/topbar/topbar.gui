@@ -131,16 +131,67 @@ types com_topbar_types {
             ))
         )]"
 
+        button = {
+            parentanchor = top|left
+            size = { 100% 100% }
+            enabled = no
+        }
+
         block "element_click" {
+            # Only Window exists
             button = {
                 parentanchor = top|left
                 using = glow_button
                 size = { 100% 100% }
-                # Only enable map mode if it is set
-                visible = "[Not(ObjectsEqual(
+                visible = "[And(
+                    ObjectsEqual(
+                        Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_map_mode')),
+                        Concatenate(Scope.Var('com_name').GetFlagName, '_map_mode')
+                    ),
+                    Not(ObjectsEqual(
                         Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_window')),
                         Concatenate(Scope.Var('com_name').GetFlagName, '_window')
-                    ))]"
+                    )),
+                )]"
+                onclick = "[GetVariableSystem.Set('com_open_window', Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_window')))]"
+            }
+
+            # Only Map Mode exists
+            button = {
+                parentanchor = top|left
+                using = glow_button
+                size = { 100% 100% }
+                visible = "[And(
+                    Not(ObjectsEqual(
+                        Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_map_mode')),
+                        Concatenate(Scope.Var('com_name').GetFlagName, '_map_mode')
+                    )),
+                    ObjectsEqual(
+                        Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_window')),
+                        Concatenate(Scope.Var('com_name').GetFlagName, '_window')
+                    ),
+                )]"
+                onmousehierarchyenter = "[SetTempMapModeByKey(Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_map_mode')))]"
+                onmousehierarchyleave = "[RemoveTempMapMode]"
+            }
+
+            # Both exist
+            button = {
+                parentanchor = top|left
+                using = glow_button
+                size = { 100% 100% }
+                visible = "[And(
+                    Not(ObjectsEqual(
+                        Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_map_mode')),
+                        Concatenate(Scope.Var('com_name').GetFlagName, '_map_mode')
+                    )),
+                    Not(ObjectsEqual(
+                        Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_window')),
+                        Concatenate(Scope.Var('com_name').GetFlagName, '_window')
+                    )),
+                )]"
+                onmousehierarchyenter = "[SetTempMapModeByKey(Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_map_mode')))]"
+                onmousehierarchyleave = "[RemoveTempMapMode]"
                 onclick = "[GetVariableSystem.Set('com_open_window', Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_window')))]"
             }
         }
@@ -164,7 +215,7 @@ types com_topbar_types {
             autoresize = yes
             align = left|nobaseline
             elide = right
-            fontsize_min = 12
+            fontsize_min = 16
         }
     }
 
