@@ -37,6 +37,7 @@ The following localization keys need to be setup for the element to work correct
 - **Required:** `<element name>_source` this will be shown in the configuration window and should contain the name of your mod
 - **Required:** `<element name>_source_tooltip` this tooltip will be shown when hovering over the `source` in the configuration window
 - **Optional:** `<element name>_window` if set this value will be set as a gui variable for `com_window_open` when the topbar element is clicked and can be checked like this: `[GetVariableSystem.HasValue('com_open_window', 'text in <element name>_window')]`
+- **Optional:** `<element name>_map_mode` if set this value will be set as a map mode when hovering the element (e.g. `mm_gdp`)
 ##### Example 2
 Here is an example for `com_topbar_element_prestige` as used above:
 ```
