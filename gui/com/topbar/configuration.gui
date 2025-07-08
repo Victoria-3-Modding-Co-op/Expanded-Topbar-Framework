@@ -163,14 +163,14 @@ types com_topbar_types {
                         using = fontsize_large
                     }
                     blockoverride "size" {
-                        size = { 100% 40 }
+                        size = { 620 40 }
                     }
                 }
 
                 textbox = {
                     text = com_topbar_configuration_add_explanation
-                    minimumsize = { 640 -1 }
-                    maximumsize = { 640 -1 }
+                    minimumsize = { 620 -1 }
+                    maximumsize = { 620 -1 }
                     align = center
                     multiline = yes
                     autoresize = yes
@@ -226,7 +226,7 @@ types com_topbar_types {
                 }
 
                 scrollarea = {
-                    minimumsize = { 640 290 }
+                    minimumsize = { 630 290 }
                     scrollbarpolicy_horizontal = always_off
                     scrollbarpolicy_vertical = always_on
                     scrollbar_vertical = {
@@ -237,7 +237,7 @@ types com_topbar_types {
                         flowcontainer = {
                             direction = vertical
                             datamodel = "[GetGlobalList('com_topbar_items')]"
-                            minimumsize = { 640 290 }
+                            minimumsize = { 620 290 }
                             item = {
                                 flowcontainer = {
                                     margin_bottom = 5
