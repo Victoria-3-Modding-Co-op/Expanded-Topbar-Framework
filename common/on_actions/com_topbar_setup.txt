@@ -21,9 +21,6 @@ com_topbar_setup = {
 				is_player = yes
 			}
 
-			# Calculate subsistence pops
-			com_topbar_calculate_subsistence_pops = yes
-
 			#= Prestige
 			if = {
 				limit = {
