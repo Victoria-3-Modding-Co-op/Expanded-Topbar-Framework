@@ -7,7 +7,6 @@ types com_topbar_types {
         datacontext = "[GetMetaPlayer.GetPlayedOrObservedCountry]"
         minimumsize = { 650 -1 }
         maximumsize = { 650 80 }
-        position = { 0 0 }
         block "topbar_margin" {
             spacing = 0
             margin = { 80 0 }
