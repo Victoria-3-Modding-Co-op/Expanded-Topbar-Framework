@@ -9,19 +9,7 @@ widget = {
     container = {
         using = hud_visibility
         parentanchor = top|left
-        alpha = 0
 
-        state = {
-            name = _show
-            alpha = 1
-            duration = 0.2
-        }
-
-        state = {
-            name = _hide
-            alpha = 0
-            duration = 0
-        }
         container = {
             visible = "[And(
                 Not(Or3(
@@ -49,6 +37,7 @@ widget = {
 
                 blockoverride "animation" {
                     position = { 0 75 }
+                    alpha = 1
                 }
             }
         }
