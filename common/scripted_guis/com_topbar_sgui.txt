@@ -83,3 +83,23 @@ com_topbar_clear_second_line = {
 		clear_variable_list = com_topbar_second_line
 	}
 }
+
+com_topbar_toggle_always_show = {
+	scope = country
+
+	saved_scopes = {
+		element
+	}
+
+	effect = {
+		if = {
+			limit = {
+				has_variable = com_topbar_always_show
+			}
+			remove_variable = com_topbar_always_show
+		}
+		else = {
+			set_variable = com_topbar_always_show
+		}
+	}
+}

@@ -4,17 +4,17 @@ types com_topbar_types {
 
     type com_topbar = flowcontainer {
         direction = vertical
-        layer = layer_ingame_menu
         datacontext = "[GetMetaPlayer.GetPlayedOrObservedCountry]"
         minimumsize = { 650 -1 }
         maximumsize = { 650 80 }
         position = { 0 0 }
-        margin = { 80 0 }
-        margin_top = 5
-        margin_bottom = 10
+        block "topbar_margin" {
+            spacing = 0
+            margin = { 80 0 }
+            margin_top = 5
+            margin_bottom = 10
+        }
         max_update_rate = 60
-        spacing = 0
-        using = clickthrough_blocker
         using = default_fade_in_out
 
         block "animation" {
@@ -37,41 +37,45 @@ types com_topbar_types {
             }
         }
 
-        background = {
-            texture = "gfx/interface/main_hud/topbar_bg.dds"
-            shaderfile = "gfx/FX/pdxgui_default.shader"
-            spriteType = Corneredstretched
-            spriteborder = { 0 0 }
-            spriteborder_bottom = 94
-            spriteborder_right = 100
-            texture_density = 2
-            using = hud_elements_alpha
+        block "background" {
+            using = clickthrough_blocker
 
-            modify_texture = {
-                texture = "gfx/interface/backgrounds/default_bg_shading.dds"
+            background = {
+                texture = "gfx/interface/main_hud/topbar_bg.dds"
+                shaderfile = "gfx/FX/pdxgui_default.shader"
                 spriteType = Corneredstretched
                 spriteborder = { 0 0 }
-                blend_mode = overlay
-                alpha = 0.5
-            }
-            modify_texture = {
-                using = texture_velvet
-            }
-            modify_texture = {
-                using = fancy_pattern
-            }
-        }
+                spriteborder_bottom = 94
+                spriteborder_right = 100
+                texture_density = 2
+                using = hud_elements_alpha
 
-        background = {
-            texture = "gfx/interface/main_hud/topbar_side_dec.dds"
-            size = { 100% 100% }
-            spriteType = Corneredstretched
-            spriteborder = { 0 0 }
-            spriteborder_bottom = 94
-            spriteborder_right = 110
-            texture_density = 2
+                modify_texture = {
+                    texture = "gfx/interface/backgrounds/default_bg_shading.dds"
+                    spriteType = Corneredstretched
+                    spriteborder = { 0 0 }
+                    blend_mode = overlay
+                    alpha = 0.5
+                }
+                modify_texture = {
+                    using = texture_velvet
+                }
+                modify_texture = {
+                    using = fancy_pattern
+                }
+            }
 
-            using = hud_shiny_effect
+            background = {
+                texture = "gfx/interface/main_hud/topbar_side_dec.dds"
+                size = { 100% 100% }
+                spriteType = Corneredstretched
+                spriteborder = { 0 0 }
+                spriteborder_bottom = 94
+                spriteborder_right = 110
+                texture_density = 2
+
+                using = hud_shiny_effect
+            }
         }
 
         com_topbar_row = {
@@ -91,6 +95,7 @@ types com_topbar_types {
         spacing = 5
         maximumsize = { 520 34 }
         minimumsize = { 520 34 }
+        using = clickthrough_blocker
         #datamodel = "[Country.MakeScope.GetList('com_topbar_first_line')]"
         #visible = "[DataModelHasItems(Country.MakeScope.GetList('com_topbar_first_line'))]"
 

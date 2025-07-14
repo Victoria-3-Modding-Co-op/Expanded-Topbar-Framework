@@ -3,6 +3,7 @@
  com_topbar_configuration_title: "Topbar Yapılandırması"
  com_topbar_configuration_current: "Mevcut Topbar"
  com_topbar_configuration_add: "Topbar Düzenle"
+ com_topbar_configuration_always_show: "Always show topbar elements (#r Overlays windows#!)"
  com_topbar_configuration_add_explanation: "Aşağıdaki butonları kullanarak topbar elemanlarını ekleyip çıkarabilirsiniz."
  com_topbar_configuration_add_first_tooltip: "Bu öğeyi ilk topbar satırına ekle."
  com_topbar_configuration_remove_first_tooltip: "Bu öğeyi ilk topbar satırından kaldır."

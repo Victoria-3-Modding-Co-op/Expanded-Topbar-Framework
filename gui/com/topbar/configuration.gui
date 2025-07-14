@@ -18,7 +18,7 @@ types com_topbar_types {
         allow_outside = yes
         parentanchor = hcenter|vcenter
         visible = "[GetVariableSystem.Exists('com_topbar_configuration')]"
-        size = { 700 700 }
+        size = { 700 760 }
 
         widget = {
             size = { 100% 100% }
@@ -143,6 +143,17 @@ types com_topbar_types {
                 }
             }
 
+            button_checkbox_label = {
+                parentanchor = hcenter
+                onclick = "[GetScriptedGui('com_topbar_toggle_always_show').Execute(GuiScope.SetRoot(Country.MakeScope).End)]"
+                blockoverride "checkbox" {
+                    checked = "[Country.MakeScope.Var('com_topbar_always_show').IsSet]"
+                }
+                blockoverride "text" {
+                    text = com_topbar_configuration_always_show
+                }
+            }
+
             flowcontainer = {
                 direction = vertical
                 minimumsize = { 640 -1 }
@@ -226,7 +237,7 @@ types com_topbar_types {
                 }
 
                 scrollarea = {
-                    minimumsize = { 630 290 }
+                    minimumsize = { 630 300 }
                     scrollbarpolicy_horizontal = always_off
                     scrollbarpolicy_vertical = always_on
                     scrollbar_vertical = {
@@ -269,7 +280,6 @@ types com_topbar_types {
             }
         }
     }
-
 
     type com_topbar_configuration_add_element = flowcontainer {
         visible = "[GetScriptedGui(Localize(Scope.Var('com_name').GetFlagName)).IsShown(GuiScope.SetRoot(Country.MakeScope).End)]"

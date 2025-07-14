@@ -56,6 +56,62 @@ widget = {
 }
 
 widget = {
+    name = "com_topbar_hud"
+    layer = layer_ingame_hud
+    size = { 100% 100% }
+    datacontext = "[GetMetaPlayer.GetPlayedOrObservedCountry]"
+    visible = "[And(
+        Country.IsValid,
+        Country.MakeScope.Var('com_topbar_always_show').IsSet
+    )]"
+    max_update_rate = 8
+
+    container = {
+        using = hud_visibility
+        parentanchor = top|left
+        container = {
+            visible = "[And(
+                Or3(
+                    InformationPanelBar.IsAnyPanelOpen,
+                    MapListPanelManager.IsVisible,
+                    GetVariableSystem.Exists('com_open_window')
+                ),
+                Or(
+                    DataModelHasItems(Country.MakeScope.GetList('com_topbar_first_line')),
+                    DataModelHasItems(Country.MakeScope.GetList('com_topbar_second_line'))
+                )
+            )]"
+
+            onmousehierarchyenter = "[PdxGuiInterruptThenTriggerAllAnimations('hide_topbar_secondary_stats','show_topbar_secondary_stats')]"
+            onmousehierarchyleave = "[PdxGuiInterruptThenTriggerAllAnimations('show_topbar_secondary_stats','hide_topbar_secondary_stats')]"
+
+            #shows only on hover
+            com_topbar = {
+                visible = "[GetVariableSystem.Exists('more_topbar_info')]"
+                blockoverride "background" {}
+                blockoverride "topbar_margin" {
+                    margin = { 105 0 }
+                    spacing = -5
+                }
+            }
+
+            #locked
+            com_topbar = {
+                visible = "[Not(GetVariableSystem.Exists('more_topbar_info'))]"
+                blockoverride "background" {}
+                blockoverride "topbar_margin" {
+                    margin = { 105 0 }
+                    spacing = -5
+                }
+                blockoverride "animation" {
+                    position = { 0 75 }
+                }
+            }
+        }
+    }
+}
+
+widget = {
     name = "com_topbar_popup"
     allow_outside = yes
     size = { 100% 100% }
