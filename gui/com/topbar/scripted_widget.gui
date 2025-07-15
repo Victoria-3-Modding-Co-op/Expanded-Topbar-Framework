@@ -263,6 +263,13 @@ widget = {
         }
     }
 
-    #"[InformationPanelBar.OpenPanel('power_bloc_panel')]"
+    widget = {
+        visible = "[GetVariableSystem.HasValue('com_open_window', 'com_topbar_market')]"
+        state = {
+            name = _show
+            on_finish = "[InformationPanelBar.OpenPanel('market')]"
+            on_finish = "[GetVariableSystem.Clear('com_open_window')]"
+        }
+    }
 
 }

@@ -109,3 +109,27 @@ com_topbar_element_unrealized_taxes = {
 		always = yes
 	}
 }
+
+com_topbar_element_agitators = {
+	scope = country
+
+	is_shown = {
+		always = yes
+	}
+}
+
+com_topbar_element_market_balance = {
+	scope = country
+
+	is_shown = {
+		always = yes
+	}
+}
+
+com_topbar_element_market_gdp = {
+	scope = country
+
+	is_shown = {
+		always = yes
+	}
+}

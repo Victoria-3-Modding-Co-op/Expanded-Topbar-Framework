@@ -259,6 +259,48 @@ com_topbar_setup = {
 					element_name = com_topbar_element_unrealized_taxes
 				}
 			}
+			#= Agitators
+			if = {
+				limit = {
+					NOT = {
+						any_in_global_list = {
+							variable = com_topbar_items
+							var:com_name ?= flag:com_topbar_element_agitators
+						}
+					}
+				}
+				add_com_topbar_element = {
+					element_name = com_topbar_element_agitators
+				}
+			}
+			#= Market Balance
+			if = {
+				limit = {
+					NOT = {
+						any_in_global_list = {
+							variable = com_topbar_items
+							var:com_name ?= flag:com_topbar_element_market_balance
+						}
+					}
+				}
+				add_com_topbar_element = {
+					element_name = com_topbar_element_market_balance
+				}
+			}
+			#= Market GDP
+			if = {
+				limit = {
+					NOT = {
+						any_in_global_list = {
+							variable = com_topbar_items
+							var:com_name ?= flag:com_topbar_element_market_gdp
+						}
+					}
+				}
+				add_com_topbar_element = {
+					element_name = com_topbar_element_market_gdp
+				}
+			}
 		}
 	}
 }

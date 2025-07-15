@@ -138,3 +138,30 @@
  com_topbar_element_unrealized_taxes_source: "$com_topbar_base_game_source$"
  com_topbar_element_unrealized_taxes_source_tooltip: "$com_topbar_base_game_source_tooltip$"
  com_topbar_element_unrealized_taxes_window: "com_topbar_taxes"
+
+ # Agitators
+ com_topbar_element_agitators: "com_topbar_element_agitators"
+ com_topbar_element_agitators_icon: "@activism!"
+ com_topbar_element_agitators_value: "[GetPlayer.GetUsedAgitatorSlots|v] / [GetPlayer.GetTotalAgitatorSlots|v]"
+ com_topbar_element_agitators_tooltip: "#header [Concept('concept_agitator','$concept_agitators$')]#!\nWe currently have [GetPlayer.GetUsedAgitatorSlots|v] of [GetPlayer.GetTotalAgitatorSlots|v] potential [Concept('concept_agitator','$concept_agitators$')]."
+ com_topbar_element_agitators_source: "$com_topbar_base_game_source$"
+ com_topbar_element_agitators_map_mode: "mm_political"
+ com_topbar_element_agitators_window: "com_topbar_politics"
+
+ # Market Balance
+ com_topbar_element_agitatorsalance: "com_topbar_element_market_balance"
+ com_topbar_element_market_balance_icon: "@market_balance!"
+ com_topbar_element_market_balance_value: "[GetPlayer.GetMarket.GetBalance|+=D]"
+ com_topbar_element_market_balance_tooltip: "[GetPlayer.GetMarket.GetBalanceDesc]"
+ com_topbar_element_market_balance_source: "$com_topbar_base_game_source$"
+ com_topbar_element_market_balance_source_tooltip: "$com_topbar_base_game_source_tooltip$"
+ com_topbar_element_market_balance_window: "com_topbar_market"
+
+ # Market GDP
+ com_topbar_element_market_gdp: "com_topbar_element_market_gdp"
+ com_topbar_element_market_gdp_icon: "@market_production!"
+ com_topbar_element_market_gdp_value: "[GetPlayer.GetMarket.GetMarketGDPValue|*v2]"
+ com_topbar_element_market_gdp_tooltip: "#header Market $concept_gdp$#!\nThe [GetPlayer.GetMarket.GetName] has a [concept_gdp] of @money![GetPlayer.GetMarket.GetMarketGDPValue|*v2].\nIt accounts for [GetPlayer.GetMarket.GetGDPContributionPercentage(GetPlayer)|v%0] of the [GetPlayer.GetName] [concept_gdp]."
+ com_topbar_element_market_gdp_source: "$com_topbar_base_game_source$"
+ com_topbar_element_market_gdp_source_tooltip: "$com_topbar_base_game_source_tooltip$"
+ com_topbar_element_market_gdp_window: "com_topbar_market"
