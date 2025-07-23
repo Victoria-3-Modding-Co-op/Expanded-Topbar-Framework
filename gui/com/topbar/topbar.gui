@@ -157,6 +157,7 @@ types com_topbar_types {
                         Concatenate(Scope.Var('com_name').GetFlagName, '_window')
                     )),
                 )]"
+                onclick = "[GetScriptedGui(Localize(Scope.Var('com_name').GetFlagName)).Execute(GuiScope.SetRoot(Country.MakeScope).End)]"
                 onclick = "[GetVariableSystem.Set('com_open_window', Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_window')))]"
             }
 
@@ -175,6 +176,7 @@ types com_topbar_types {
                         Concatenate(Scope.Var('com_name').GetFlagName, '_window')
                     ),
                 )]"
+                onclick = "[GetScriptedGui(Localize(Scope.Var('com_name').GetFlagName)).Execute(GuiScope.SetRoot(Country.MakeScope).End)]"
                 onmousehierarchyenter = "[SetTempMapModeByKey(Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_map_mode')))]"
                 onmousehierarchyleave = "[RemoveTempMapMode]"
             }
@@ -196,6 +198,7 @@ types com_topbar_types {
                 )]"
                 onmousehierarchyenter = "[SetTempMapModeByKey(Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_map_mode')))]"
                 onmousehierarchyleave = "[RemoveTempMapMode]"
+                onclick = "[GetScriptedGui(Localize(Scope.Var('com_name').GetFlagName)).Execute(GuiScope.SetRoot(Country.MakeScope).End)]"
                 onclick = "[GetVariableSystem.Set('com_open_window', Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_window')))]"
             }
         }

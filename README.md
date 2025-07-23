@@ -54,7 +54,7 @@ l_english:
 
 #### Part 2 - Scripted GUI
 Secondly, there needs to be an SGUI configured (in `your_mod_folder\common\scripted_guis`) that has the same name as the element (`<element name>`).
-Only the `is_shown` attribute is parsed by the framework.
+Only the `is_shown` and `effect` attribute are parsed by the framework.
 This can be used to show or hide specific elements for specific countries.
 ##### Example 3
 Here is an example for `com_topbar_element_prestige` as used above:
@@ -64,6 +64,10 @@ com_topbar_element_prestige = {
 
     is_shown = {
         always = yes
+    }
+
+    effect = {
+        # Run any effect here
     }
 }
 ```
