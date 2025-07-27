@@ -128,7 +128,7 @@ jobs:
           tag_name: ${{ steps.increment-version.outputs.next-version }}
           name: ${{ steps.increment-version.outputs.next-version }}
           body: |
-            Released a new version of the **Community Mod Framework**.
+            Released a new version of the **Expanded Topbar Framework**.
 
             ### Commits:
             ${{ steps.commits.outputs.markdown }}
