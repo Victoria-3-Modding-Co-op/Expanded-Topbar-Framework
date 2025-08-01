@@ -1,7 +1,5 @@
 braz_por
 french
-german
 japanese
 polish
-russian
 spanish
