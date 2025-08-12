@@ -128,7 +128,7 @@
  # Subsistence Pops
  com_topbar_element_subsistence_pops: "com_topbar_element_subsistence_pops"
  com_topbar_element_subsistence_pops_icon: "@peasants!"
- com_topbar_element_subsistence_pops_value: "[GetPopType('peasants').GetPopulation(GetPlayer.Self)|kv]"
+ com_topbar_element_subsistence_pops_value: "[GetPlayer.MakeScope.Var('com_topbar_subsistence_pops').GetValue|kv]"
  com_topbar_element_subsistence_pops_tooltip: "#header [GetPopType('peasants').GetName]#!\n[GetPopType('peasants').GetDesc]\n\n#b [GetPopType('peasants').GetName] [GetPlayer.GetAltName('IN')]#!:\nBevölkerung: [GetPopType('peasants').GetPopulation(GetPlayer.Self)|kv]\n[concept_political_strength]: [GetPopType('peasants').GetPolStr(GetPlayer.Self)|kv]\n\n[GetPopType('peasants').GetStrataBreakdownInCountry(GetPlayer.Self)]\n\n[GetPopType('peasants').GetInterestGroupSupportDesc( GetPlayer.Self )][ConcatIfNeitherEmpty('\n$TOOLTIP_DELIMITER$\n', GetPopType('peasants').GetQualificationsGrowthDesc)]"
  com_topbar_element_subsistence_pops_source: "$com_topbar_base_game_source$"
  com_topbar_element_subsistence_pops_source_tooltip: "$com_topbar_base_game_source_tooltip$"
