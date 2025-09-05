@@ -5,12 +5,12 @@ types com_topbar_types {
     type com_topbar = flowcontainer {
         direction = vertical
         datacontext = "[GetMetaPlayer.GetPlayedOrObservedCountry]"
-        minimumsize = { 650 -1 }
-        maximumsize = { 650 80 }
+        minimumsize = { 595 -1 }
+        maximumsize = { 595 78 }
         block "topbar_margin" {
             spacing = 0
-            margin = { 80 0 }
-            margin_top = 5
+            margin = { 20 0 }
+            margin_top = 0
             margin_bottom = 10
         }
         max_update_rate = 60
@@ -77,16 +77,17 @@ types com_topbar_types {
             }
         }
 
-        com_topbar_row = {
-            datamodel = "[Country.MakeScope.GetList('com_topbar_first_line')]"
-            visible = "[DataModelHasItems(Country.MakeScope.GetList('com_topbar_first_line'))]"
-        }
+        block "content" {
+            com_topbar_row = {
+                datamodel = "[Country.MakeScope.GetList('com_topbar_first_line')]"
+                visible = "[DataModelHasItems(Country.MakeScope.GetList('com_topbar_first_line'))]"
+            }
 
-        com_topbar_row = {
-            datamodel = "[Country.MakeScope.GetList('com_topbar_second_line')]"
-            visible = "[DataModelHasItems(Country.MakeScope.GetList('com_topbar_second_line'))]"
+            com_topbar_row = {
+                datamodel = "[Country.MakeScope.GetList('com_topbar_second_line')]"
+                visible = "[DataModelHasItems(Country.MakeScope.GetList('com_topbar_second_line'))]"
+            }
         }
-
     }
 
     type com_topbar_row = flowcontainer {
@@ -97,6 +98,7 @@ types com_topbar_types {
         using = clickthrough_blocker
         #datamodel = "[Country.MakeScope.GetList('com_topbar_first_line')]"
         #visible = "[DataModelHasItems(Country.MakeScope.GetList('com_topbar_first_line'))]"
+        block "row_attributes" {}
 
         background = {
             using = dark_area_rounded

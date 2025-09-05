@@ -1,6 +1,61 @@
 widget = {
-    name = "com_topbar"
+    name = "com_topbar_background"
     layer = layer_ingame_menu
+    size = { 100% 100% }
+    datacontext = "[GetMetaPlayer.GetPlayedOrObservedCountry]"
+    visible = "[Country.IsValid]"
+    max_update_rate = 8
+
+    container = {
+        using = hud_visibility
+        parentanchor = top|left
+
+        container = {
+            visible = "[And(
+                Not(Or3(
+                    InformationPanelBar.IsAnyPanelOpen,
+                    MapListPanelManager.IsVisible,
+                    GetVariableSystem.Exists('com_open_window')
+                )),
+                Or(
+                    DataModelHasItems(Country.MakeScope.GetList('com_topbar_first_line')),
+                    DataModelHasItems(Country.MakeScope.GetList('com_topbar_second_line'))
+                )
+            )]"
+
+            onmousehierarchyenter = "[PdxGuiInterruptThenTriggerAllAnimations('hide_topbar_secondary_stats','show_topbar_secondary_stats')]"
+            onmousehierarchyleave = "[PdxGuiInterruptThenTriggerAllAnimations('show_topbar_secondary_stats','hide_topbar_secondary_stats')]"
+
+            #shows only on hover
+            com_topbar = {
+                visible = "[GetVariableSystem.Exists('more_topbar_info')]"
+
+                blockoverride "row_attributes" {
+                    alpha = 0
+                }
+            }
+
+            #locked
+            com_topbar = {
+                visible = "[Not(GetVariableSystem.Exists('more_topbar_info'))]"
+
+                blockoverride "row_attributes" {
+                    alpha = 0
+                }
+
+                blockoverride "animation" {
+                    position = { 0 37 }
+                    alpha = 1
+                }
+
+            }
+        }
+    }
+}
+
+widget = {
+    name = "com_topbar"
+    layer = layer_ingame_menu_save
     size = { 100% 100% }
     datacontext = "[GetMetaPlayer.GetPlayedOrObservedCountry]"
     visible = "[Country.IsValid]"
@@ -36,7 +91,7 @@ widget = {
                 visible = "[Not(GetVariableSystem.Exists('more_topbar_info'))]"
 
                 blockoverride "animation" {
-                    position = { 0 75 }
+                    position = { 118 37 }
                     alpha = 1
                 }
             }
@@ -46,7 +101,7 @@ widget = {
 
 widget = {
     name = "com_topbar_hud"
-    layer = layer_ingame_hud
+    layer = layer_ingame_menu_save
     size = { 100% 100% }
     datacontext = "[GetMetaPlayer.GetPlayedOrObservedCountry]"
     visible = "[And(
