@@ -1,7 +1,7 @@
 {
   "name" : "[1.11] Expanded Topbar Framework",
   "id" : "com.github.Victoria-3-Modding-Co-op.Expanded-Topbar-Framework",
-  "version" : "1.9.0",
+  "version" : "1.9.1",
   "supported_game_version" : "1.*",
   "short_description" : "This is a framework for mods to add elements to the topbar.",
   "tags" : [
