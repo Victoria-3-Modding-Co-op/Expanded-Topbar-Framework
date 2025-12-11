@@ -1,4 +1,4 @@
-﻿add_com_topbar_element = {
+﻿REPLACE_OR_CREATE:add_com_topbar_element = {
 	ordered_country = {
 		order_by = prestige
 		position = 0
