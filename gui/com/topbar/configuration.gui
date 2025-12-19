@@ -325,64 +325,54 @@ types com_topbar_types {
 
         vertical_divider = {}
 
-        button = {
-            parentanchor = vcenter
-            using = default_button
-            size = { 50 50 }
-            tooltip = com_topbar_configuration_add_first_tooltip
-            datacontext = "[GetScriptedGui('com_topbar_toggle_element_first_line')]"
-            onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
-            widget = {
-                visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
-                tooltip = com_topbar_configuration_remove_first_tooltip
-                size = { 100% 100% }
-                icon = {
+        widget = {
+            size = { 50 60 }
+            button_checkbox = {
+                parentanchor = center
+                datacontext = "[GetScriptedGui('com_topbar_toggle_element_first_line')]"
+                onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
+                checked = "[ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
+
+                widget = {
                     parentanchor = center
-                    size = { 30 30 }
-                    texture = gfx/interface/icons/generic_icons/red_cross.dds
+                    size = { 100% 100% }
+                    visible = "[Not(ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End))]"
+                    tooltip = com_topbar_configuration_add_first_tooltip
                 }
-            }
-            widget = {
-                visible = "[Not(ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End))]"
-                tooltip = com_topbar_configuration_add_first_tooltip
-                size = { 100% 100% }
-                icon = {
+                widget = {
                     parentanchor = center
-                    size = { 30 30 }
-                    texture = gfx/interface/icons/generic_icons/green_checkmark.dds
+                    size = { 100% 100% }
+                    visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
+                    tooltip = com_topbar_configuration_remove_first_tooltip
                 }
             }
         }
 
         vertical_divider = {}
 
-        button = {
-            parentanchor = vcenter
-            using = default_button
-            size = { 50 50 }
-            datacontext = "[GetScriptedGui('com_topbar_toggle_element_second_line')]"
-            onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
-            widget = {
-                visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
-                tooltip = com_topbar_configuration_remove_second_tooltip
-                size = { 100% 100% }
-                icon = {
+        widget = {
+            size = { 50 60 }
+            button_checkbox = {
+                parentanchor = center
+                datacontext = "[GetScriptedGui('com_topbar_toggle_element_second_line')]"
+                onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
+                checked = "[ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
+
+                widget = {
                     parentanchor = center
-                    size = { 30 30 }
-                    texture = gfx/interface/icons/generic_icons/red_cross.dds
+                    size = { 100% 100% }
+                    visible = "[Not(ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End))]"
+                    tooltip = com_topbar_configuration_add_second_tooltip
                 }
-            }
-            widget = {
-                visible = "[Not(ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End))]"
-                tooltip = com_topbar_configuration_add_second_tooltip
-                size = { 100% 100% }
-                icon = {
+                widget = {
                     parentanchor = center
-                    size = { 30 30 }
-                    texture = gfx/interface/icons/generic_icons/green_checkmark.dds
+                    size = { 100% 100% }
+                    visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
+                    tooltip = com_topbar_configuration_remove_second_tooltip
                 }
             }
         }
+
     }
 
 }

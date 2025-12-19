@@ -121,7 +121,7 @@
  com_topbar_element_agitators_source: "$com_topbar_base_game_source$"
  com_topbar_element_agitators_map_mode: "mm_political"
  com_topbar_element_agitators_window: "com_topbar_politics"
- com_topbar_element_agitatorsalance: "com_topbar_element_market_balance"
+ com_topbar_element_market_balance: "com_topbar_element_market_balance"
  com_topbar_element_market_balance_icon: "@market_balance!"
  com_topbar_element_market_balance_value: "[GetPlayer.GetMarket.GetBalance|+=D]"
  com_topbar_element_market_balance_tooltip: "[GetPlayer.GetMarket.GetBalanceDesc]"
