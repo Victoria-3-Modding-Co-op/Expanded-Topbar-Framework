@@ -12,6 +12,6 @@
  com_topbar_configuration_add_second_tooltip: "Adicionar este elemento à segunda linha da barra superior."
  com_topbar_configuration_remove_second_tooltip: "Remova este elemento da segunda linha da barra superior."
  com_topbar_configuration_add_header_source: "Fonte do Elemento"
- com_topbar_configuration_add_header_element: "Elemento da Barra Superior"
+ com_topbar_configuration_add_header_element: "Elemento da\nBarra Superior"
  com_topbar_configuration_add_header_first: "Primeira\nLinha"
  com_topbar_configuration_add_header_second: "Segunda\nLinha"
