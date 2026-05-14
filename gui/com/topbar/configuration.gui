@@ -200,6 +200,7 @@ types com_topbar_types {
                     textbox = {
                         text = com_topbar_configuration_add_header_source
                         minimumsize = { 230 60 }
+                        maximumsize = { 230 60 }
                         align = left
                         default_format = "#bold"
                         multiline = yes
@@ -210,6 +211,7 @@ types com_topbar_types {
                     textbox = {
                         text = com_topbar_configuration_add_header_element
                         minimumsize = { 155 60 }
+                        maximumsize = { 155 60 }
                         default_format = "#bold"
                         align = center
                         multiline = yes
@@ -220,6 +222,7 @@ types com_topbar_types {
                     textbox = {
                         text = com_topbar_configuration_add_header_first
                         minimumsize = { 50 60 }
+                        maximumsize = { 50 60 }
                         default_format = "#bold"
                         align = center
                         multiline = yes
@@ -229,6 +232,7 @@ types com_topbar_types {
                     textbox = {
                         text = com_topbar_configuration_add_header_second
                         minimumsize = { 50 60 }
+                        maximumsize = { 50 60 }
                         default_format = "#bold"
                         align = center
                         multiline = yes

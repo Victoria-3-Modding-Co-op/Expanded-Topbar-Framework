@@ -136,7 +136,7 @@ widget = {
                 using = Animation_Curve_Default
             }
             alpha = 0
-            position = { 690 10 }
+            position = { 670 10 }
         }
 
         com_topbar_configuration_button = {
