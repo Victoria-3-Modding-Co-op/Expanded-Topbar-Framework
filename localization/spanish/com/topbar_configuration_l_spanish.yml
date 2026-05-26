@@ -13,5 +13,5 @@
  com_topbar_configuration_remove_second_tooltip: "Restar este elemento de la segunda fila de la barra superior."
  com_topbar_configuration_add_header_source: "Origen de este elemento"
  com_topbar_configuration_add_header_element: "Elemento de la Barra Superior"
- com_topbar_configuration_add_header_first: "1. Fila"
- com_topbar_configuration_add_header_second: "2. Fila"
+ com_topbar_configuration_add_header_first: "1.a\nFila"
+ com_topbar_configuration_add_header_second: "2.a\nFila"
