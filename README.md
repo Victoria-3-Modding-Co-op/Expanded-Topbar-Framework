@@ -43,7 +43,7 @@ Here is an example for `com_topbar_element_prestige` as used above:
 ```
 l_english:
  # Prestige
- com_topbar_element_prestige: "com_topbar_element_prestige"
+ com_topbar_element_prestige: "com_topbar_element_prestige" # NEEDs to be the same on both sides
  com_topbar_element_prestige_icon: "@prestige!"
  com_topbar_element_prestige_value: "[GetPlayer.GetPrestige|v]"
  com_topbar_element_prestige_tooltip: "#header [concept_prestige]#!\n$concept_prestige_desc$"
