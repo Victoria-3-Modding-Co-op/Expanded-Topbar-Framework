@@ -256,7 +256,7 @@ types com_topbar_types {
                             item = {
                                 flowcontainer = {
                                     margin_bottom = 5
-                                    visible = "[Scope.Var('com_name').IsSet]"
+                                    visible = "[Not(Scope.Var('com_name').IsSet)]"
                                     com_topbar_configuration_add_element = {}
                                 }
                             }
@@ -286,7 +286,7 @@ types com_topbar_types {
     }
 
     type com_topbar_configuration_add_element = flowcontainer {
-        visible = "[GetScriptedGui(Localize(Scope.Var('com_name').GetFlagName)).IsShown(GuiScope.SetRoot(Country.MakeScope).End)]"
+        visible = "[GetScriptedGui(Localize(Scope.GetFlagName)).IsShown(GuiScope.SetRoot(Country.MakeScope).End)]"
         minimumsize = { 620 60 }
         margin_left = 30
         margin_right = 10
@@ -300,8 +300,8 @@ types com_topbar_types {
             minimumsize = { 415 60 }
             spacing = 15
             textbox = {
-                text = "[Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_source'))]"
-                tooltip = "[Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_source_tooltip'))]"
+                text = "[Localize(Concatenate(Scope.GetFlagName, '_source'))]"
+                tooltip = "[Localize(Concatenate(Scope.GetFlagName, '_source_tooltip'))]"
                 size = { 230 60 }
                 align = left
                 parentanchor = vcenter
@@ -334,19 +334,19 @@ types com_topbar_types {
             button_checkbox = {
                 parentanchor = center
                 datacontext = "[GetScriptedGui('com_topbar_toggle_element_first_line')]"
-                onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
-                checked = "[ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
+                onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(Country.MakeScope).AddScope('element', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                checked = "[ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', MakeScopeFlag(Scope.GetFlagName)).End)]"
 
                 widget = {
                     parentanchor = center
                     size = { 100% 100% }
-                    visible = "[Not(ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End))]"
+                    visible = "[Not(ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', MakeScopeFlag(Scope.GetFlagName)).End))]"
                     tooltip = com_topbar_configuration_add_first_tooltip
                 }
                 widget = {
                     parentanchor = center
                     size = { 100% 100% }
-                    visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
+                    visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', MakeScopeFlag(Scope.GetFlagName)).End)]"
                     tooltip = com_topbar_configuration_remove_first_tooltip
                 }
             }
@@ -359,19 +359,19 @@ types com_topbar_types {
             button_checkbox = {
                 parentanchor = center
                 datacontext = "[GetScriptedGui('com_topbar_toggle_element_second_line')]"
-                onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
-                checked = "[ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
+                onclick = "[ScriptedGui.Execute(GuiScope.SetRoot(Country.MakeScope).AddScope('element', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                checked = "[ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', MakeScopeFlag(Scope.GetFlagName)).End)]"
 
                 widget = {
                     parentanchor = center
                     size = { 100% 100% }
-                    visible = "[Not(ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End))]"
+                    visible = "[Not(ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', MakeScopeFlag(Scope.GetFlagName)).End))]"
                     tooltip = com_topbar_configuration_add_second_tooltip
                 }
                 widget = {
                     parentanchor = center
                     size = { 100% 100% }
-                    visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', Scope.GetCharacter.MakeScope).End)]"
+                    visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(Country.MakeScope).AddScope('element', MakeScopeFlag(Scope.GetFlagName)).End)]"
                     tooltip = com_topbar_configuration_remove_second_tooltip
                 }
             }

@@ -29,7 +29,7 @@ com_topbar_setup = {
 					NOT = {
 						any_in_global_list = {
 							variable = com_topbar_items
-							var:com_name ?= flag:com_topbar_element_prestige
+							this = flag:com_topbar_element_prestige
 						}
 					}
 				}
@@ -49,7 +49,7 @@ com_topbar_setup = {
 					NOT = {
 						any_in_global_list = {
 							variable = com_topbar_items
-							var:com_name ?= flag:com_topbar_element_bloc_prestige
+							this = flag:com_topbar_element_bloc_prestige
 						}
 					}
 				}
@@ -63,7 +63,7 @@ com_topbar_setup = {
 					NOT = {
 						any_in_global_list = {
 							variable = com_topbar_items
-							var:com_name ?= flag:com_topbar_element_bloc_cohesion
+							this = flag:com_topbar_element_bloc_cohesion
 						}
 					}
 				}
@@ -77,7 +77,7 @@ com_topbar_setup = {
 					NOT = {
 						any_in_global_list = {
 							variable = com_topbar_items
-							var:com_name ?= flag:com_topbar_element_bloc_size
+							this = flag:com_topbar_element_bloc_size
 						}
 					}
 				}
@@ -91,7 +91,7 @@ com_topbar_setup = {
 					NOT = {
 						any_in_global_list = {
 							variable = com_topbar_items
-							var:com_name ?= flag:com_topbar_element_legitimacy
+							this = flag:com_topbar_element_legitimacy
 						}
 					}
 				}
@@ -111,7 +111,7 @@ com_topbar_setup = {
 					NOT = {
 						any_in_global_list = {
 							variable = com_topbar_items
-							var:com_name ?= flag:com_topbar_element_innovation
+							this = flag:com_topbar_element_innovation
 						}
 					}
 				}
@@ -131,7 +131,7 @@ com_topbar_setup = {
 					NOT = {
 						any_in_global_list = {
 							variable = com_topbar_items
-							var:com_name ?= flag:com_topbar_element_companies
+							this = flag:com_topbar_element_companies
 						}
 					}
 				}
@@ -145,7 +145,7 @@ com_topbar_setup = {
 					NOT = {
 						any_in_global_list = {
 							variable = com_topbar_items
-							var:com_name ?= flag:com_topbar_element_charters
+							this = flag:com_topbar_element_charters
 						}
 					}
 				}
@@ -159,7 +159,7 @@ com_topbar_setup = {
 					NOT = {
 						any_in_global_list = {
 							variable = com_topbar_items
-							var:com_name ?= flag:com_topbar_element_army_size
+							this = flag:com_topbar_element_army_size
 						}
 					}
 				}
@@ -179,7 +179,7 @@ com_topbar_setup = {
 					NOT = {
 						any_in_global_list = {
 							variable = com_topbar_items
-							var:com_name ?= flag:com_topbar_element_navy_size
+							this = flag:com_topbar_element_navy_size
 						}
 					}
 				}
@@ -199,7 +199,7 @@ com_topbar_setup = {
 					NOT = {
 						any_in_global_list = {
 							variable = com_topbar_items
-							var:com_name ?= flag:com_topbar_element_interests
+							this = flag:com_topbar_element_interests
 						}
 					}
 				}
@@ -219,7 +219,7 @@ com_topbar_setup = {
 					NOT = {
 						any_in_global_list = {
 							variable = com_topbar_items
-							var:com_name ?= flag:com_topbar_element_unemployed_pops
+							this = flag:com_topbar_element_unemployed_pops
 						}
 					}
 				}
@@ -233,7 +233,7 @@ com_topbar_setup = {
 					NOT = {
 						any_in_global_list = {
 							variable = com_topbar_items
-							var:com_name ?= flag:com_topbar_element_subsistence_pops
+							this = flag:com_topbar_element_subsistence_pops
 						}
 					}
 				}
@@ -253,7 +253,7 @@ com_topbar_setup = {
 					NOT = {
 						any_in_global_list = {
 							variable = com_topbar_items
-							var:com_name ?= flag:com_topbar_element_unrealized_taxes
+							this = flag:com_topbar_element_unrealized_taxes
 						}
 					}
 				}
@@ -267,7 +267,7 @@ com_topbar_setup = {
 					NOT = {
 						any_in_global_list = {
 							variable = com_topbar_items
-							var:com_name ?= flag:com_topbar_element_agitators
+							this = flag:com_topbar_element_agitators
 						}
 					}
 				}
@@ -281,7 +281,7 @@ com_topbar_setup = {
 					NOT = {
 						any_in_global_list = {
 							variable = com_topbar_items
-							var:com_name ?= flag:com_topbar_element_market_balance
+							this = flag:com_topbar_element_market_balance
 						}
 					}
 				}
@@ -295,7 +295,7 @@ com_topbar_setup = {
 					NOT = {
 						any_in_global_list = {
 							variable = com_topbar_items
-							var:com_name ?= flag:com_topbar_element_market_gdp
+							this = flag:com_topbar_element_market_gdp
 						}
 					}
 				}

@@ -1,0 +1,20 @@
+﻿# Simply delete this file after 01.08.2026
+# This migration will have been live long enough
+
+on_monthly_pulse = {
+	on_actions = {
+		com_topbar_flag_migration
+	}
+}
+
+# Remove this later
+com_topbar_flag_migration = {
+	trigger = {
+		NOT = {
+			has_global_variable = com_topbar_migration_complete
+		}
+	}
+	effect = {
+		migrated_com_topbar_elements_to_flag = yes
+	}
+}

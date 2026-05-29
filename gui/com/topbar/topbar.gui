@@ -108,7 +108,7 @@ types com_topbar_types {
 
         item = {
             container = {
-                visible = "[Scope.Var('com_name').IsSet]"
+                visible = "[Not(Scope.Var('com_name').IsSet)]"
                 com_topbar_element = {
                     parentanchor = vcenter
                 }
@@ -122,16 +122,16 @@ types com_topbar_types {
         margin_left = 5
         spacing = 5
         using = tooltip_below
-        tooltip = "[Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_tooltip'))]"
+        tooltip = "[Localize(Concatenate(Scope.GetFlagName, '_tooltip'))]"
         visible = "[And3(
-            GetScriptedGui(Localize(Scope.Var('com_name').GetFlagName)).IsShown(GuiScope.SetRoot(Country.MakeScope).End),
+            GetScriptedGui(Localize(Scope.GetFlagName)).IsShown(GuiScope.SetRoot(Country.MakeScope).End),
             Not(ObjectsEqual(
-                Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_value')),
-                Concatenate(Scope.Var('com_name').GetFlagName, '_value')
+                Localize(Concatenate(Scope.GetFlagName, '_value')),
+                Concatenate(Scope.GetFlagName, '_value')
             )),
             Not(ObjectsEqual(
-                Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_icon')),
-                Concatenate(Scope.Var('com_name').GetFlagName, '_icon')
+                Localize(Concatenate(Scope.GetFlagName, '_icon')),
+                Concatenate(Scope.GetFlagName, '_icon')
             ))
         )]"
 
@@ -149,16 +149,16 @@ types com_topbar_types {
                 size = { 100% 100% }
                 visible = "[And(
                     ObjectsEqual(
-                        Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_map_mode')),
-                        Concatenate(Scope.Var('com_name').GetFlagName, '_map_mode')
+                        Localize(Concatenate(Scope.GetFlagName, '_map_mode')),
+                        Concatenate(Scope.GetFlagName, '_map_mode')
                     ),
                     Not(ObjectsEqual(
-                        Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_window')),
-                        Concatenate(Scope.Var('com_name').GetFlagName, '_window')
+                        Localize(Concatenate(Scope.GetFlagName, '_window')),
+                        Concatenate(Scope.GetFlagName, '_window')
                     )),
                 )]"
-                onclick = "[GetScriptedGui(Localize(Scope.Var('com_name').GetFlagName)).Execute(GuiScope.SetRoot(Country.MakeScope).End)]"
-                onclick = "[GetVariableSystem.Set('com_open_window', Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_window')))]"
+                onclick = "[GetScriptedGui(Localize(Scope.GetFlagName)).Execute(GuiScope.SetRoot(Country.MakeScope).End)]"
+                onclick = "[GetVariableSystem.Set('com_open_window', Localize(Concatenate(Scope.GetFlagName, '_window')))]"
             }
 
             # Only Map Mode exists
@@ -168,16 +168,16 @@ types com_topbar_types {
                 size = { 100% 100% }
                 visible = "[And(
                     Not(ObjectsEqual(
-                        Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_map_mode')),
-                        Concatenate(Scope.Var('com_name').GetFlagName, '_map_mode')
+                        Localize(Concatenate(Scope.GetFlagName, '_map_mode')),
+                        Concatenate(Scope.GetFlagName, '_map_mode')
                     )),
                     ObjectsEqual(
-                        Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_window')),
-                        Concatenate(Scope.Var('com_name').GetFlagName, '_window')
+                        Localize(Concatenate(Scope.GetFlagName, '_window')),
+                        Concatenate(Scope.GetFlagName, '_window')
                     ),
                 )]"
-                onclick = "[GetScriptedGui(Localize(Scope.Var('com_name').GetFlagName)).Execute(GuiScope.SetRoot(Country.MakeScope).End)]"
-                onmousehierarchyenter = "[SetTempMapModeByKey(Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_map_mode')))]"
+                onclick = "[GetScriptedGui(Localize(Scope.GetFlagName)).Execute(GuiScope.SetRoot(Country.MakeScope).End)]"
+                onmousehierarchyenter = "[SetTempMapModeByKey(Localize(Concatenate(Scope.GetFlagName, '_map_mode')))]"
                 onmousehierarchyleave = "[RemoveTempMapMode]"
             }
 
@@ -188,18 +188,18 @@ types com_topbar_types {
                 size = { 100% 100% }
                 visible = "[And(
                     Not(ObjectsEqual(
-                        Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_map_mode')),
-                        Concatenate(Scope.Var('com_name').GetFlagName, '_map_mode')
+                        Localize(Concatenate(Scope.GetFlagName, '_map_mode')),
+                        Concatenate(Scope.GetFlagName, '_map_mode')
                     )),
                     Not(ObjectsEqual(
-                        Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_window')),
-                        Concatenate(Scope.Var('com_name').GetFlagName, '_window')
+                        Localize(Concatenate(Scope.GetFlagName, '_window')),
+                        Concatenate(Scope.GetFlagName, '_window')
                     )),
                 )]"
-                onmousehierarchyenter = "[SetTempMapModeByKey(Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_map_mode')))]"
+                onmousehierarchyenter = "[SetTempMapModeByKey(Localize(Concatenate(Scope.GetFlagName, '_map_mode')))]"
                 onmousehierarchyleave = "[RemoveTempMapMode]"
-                onclick = "[GetScriptedGui(Localize(Scope.Var('com_name').GetFlagName)).Execute(GuiScope.SetRoot(Country.MakeScope).End)]"
-                onclick = "[GetVariableSystem.Set('com_open_window', Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_window')))]"
+                onclick = "[GetScriptedGui(Localize(Scope.GetFlagName)).Execute(GuiScope.SetRoot(Country.MakeScope).End)]"
+                onclick = "[GetVariableSystem.Set('com_open_window', Localize(Concatenate(Scope.GetFlagName, '_window')))]"
             }
         }
 
@@ -207,7 +207,7 @@ types com_topbar_types {
             minimumsize = { -1 30 }
             maximumsize = { -1 30 }
             parentanchor = vcenter
-            text = "[Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_icon'))]"
+            text = "[Localize(Concatenate(Scope.GetFlagName, '_icon'))]"
             autoresize = yes
             align = left|nobaseline
             elide = right
@@ -218,7 +218,7 @@ types com_topbar_types {
             minimumsize = { -1 30 }
             maximumsize = { -1 30 }
             parentanchor = vcenter
-            text = "[Localize(Concatenate(Scope.Var('com_name').GetFlagName, '_value'))]"
+            text = "[Localize(Concatenate(Scope.GetFlagName, '_value'))]"
             autoresize = yes
             align = left|nobaseline
             elide = right
