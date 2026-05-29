@@ -150,7 +150,7 @@ my_custom_topbar_save_game_compatibility = {
                 NOT = {
                     any_in_global_list = {
                         variable = com_topbar_items
-                        var:com_name ?= flag:my_other_custom_topbar_element
+                        this = flag:my_other_custom_topbar_element
                     }
                 }
             }
