@@ -51,3 +51,12 @@ texticon = {
     fontsize = 70
   }
 }
+
+texticon = {
+  icon = com_trade_capacity
+  iconsize = {
+    offset = { 50 40 }
+    texture = "gfx/interface/main_hud/trade_overview_btn.dds"
+    fontsize = 50
+  }
+}

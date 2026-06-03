@@ -192,15 +192,15 @@ types com_topbar_types {
                     maximumsize = { 620 -1 }
                     margin_left = 30
                     margin_right = 5
-                    spacing = 15
+                    spacing = 5
 
                     background = {
                         using = simple_frame
                     }
                     textbox = {
                         text = com_topbar_configuration_add_header_source
-                        minimumsize = { 230 60 }
-                        maximumsize = { 230 60 }
+                        minimumsize = { 240 60 }
+                        maximumsize = { 240 60 }
                         align = left
                         default_format = "#bold"
                         multiline = yes
@@ -210,8 +210,8 @@ types com_topbar_types {
                     vertical_divider = {}
                     textbox = {
                         text = com_topbar_configuration_add_header_element
-                        minimumsize = { 155 60 }
-                        maximumsize = { 155 60 }
+                        minimumsize = { 175 60 }
+                        maximumsize = { 175 60 }
                         default_format = "#bold"
                         align = center
                         multiline = yes
@@ -221,8 +221,8 @@ types com_topbar_types {
                     vertical_divider = {}
                     textbox = {
                         text = com_topbar_configuration_add_header_first
-                        minimumsize = { 50 60 }
-                        maximumsize = { 50 60 }
+                        minimumsize = { 70 60 }
+                        maximumsize = { 70 60 }
                         default_format = "#bold"
                         align = center
                         multiline = yes
@@ -231,8 +231,8 @@ types com_topbar_types {
                     vertical_divider = {}
                     textbox = {
                         text = com_topbar_configuration_add_header_second
-                        minimumsize = { 50 60 }
-                        maximumsize = { 50 60 }
+                        minimumsize = { 70 60 }
+                        maximumsize = { 70 60 }
                         default_format = "#bold"
                         align = center
                         multiline = yes

@@ -133,3 +133,11 @@ com_topbar_element_market_gdp = {
 		always = yes
 	}
 }
+
+com_topbar_element_trade_capacity = {
+	scope = country
+
+	is_shown = {
+		always = yes
+	}
+}

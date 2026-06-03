@@ -119,7 +119,7 @@ widget = {
     container = {
         using = hud_visibility
         com_topbar_configuration_button = {
-            visible = "[GreaterThanZero_CFixedPoint(GetPlayer.GetSupplyNetworkStrength)]"
+            visible = "[GetPlayer.IsLandlocked]"
             onmousehierarchyenter = "[PdxGuiInterruptThenTriggerAllAnimations('hide_topbar_secondary_stats','show_topbar_secondary_stats')]"
             onmousehierarchyleave = "[PdxGuiInterruptThenTriggerAllAnimations('show_topbar_secondary_stats','hide_topbar_secondary_stats')]"
             state = {
@@ -140,7 +140,7 @@ widget = {
         }
 
         com_topbar_configuration_button = {
-            visible = "[Not(GreaterThanZero_CFixedPoint(GetPlayer.GetSupplyNetworkStrength))]"
+            visible = "[Not(GetPlayer.IsLandlocked)]"
             onmousehierarchyenter = "[PdxGuiInterruptThenTriggerAllAnimations('hide_topbar_secondary_stats','show_topbar_secondary_stats')]"
             onmousehierarchyleave = "[PdxGuiInterruptThenTriggerAllAnimations('show_topbar_secondary_stats','hide_topbar_secondary_stats')]"
             using = hud_visibility
@@ -158,7 +158,7 @@ widget = {
                 using = Animation_Curve_Default
             }
             alpha = 0
-            position = { 670 10 }
+            position = { 695 10 }
         }
     }
 }
